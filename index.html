@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maisoon A Rahman — Portfolio</title>
+  <meta name="description" content="Creative Software Developer. Portfolio of Maisoon A Rahman." />
+  <link href="https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23222'/%3E%3Ctext x='50' y='58' font-size='48' text-anchor='middle' fill='%23fff' font-family='Arial,Helvetica,sans-serif'%3EM%3C/text%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- ================================================================================================================================================================
+   ====================================================================================================================================================================
+                                                                        STYLESHEET CSS
+   ====================================================================================================================================================================
+   ==================================================================================================================================================================== -->
+
+  <style>
+    :root{
+      --paper: #f6efe3;          /* slightly deeper warm cream */
+      --ink: #0f172a;            /* deep graphite */
+      --lav: #c4b5fd;            /* lavender */
+      --peri:#9ab0ff;            /* periwinkle */
+      --mint:#a6e3d0;            /* mint */
+      --peach:#ffb3a7;           /* peach */
+      --sun: #ffd166;            /* sticky-note yellow */
+      --rose:#f4a4c7;            /* rose */
+      --line:#e5dccd;            /* ruled-paper line */
+    }
+
+    /* --------------------- reveal of home after loader ------------------ */
+    :root{ --ease: cubic-bezier(.22,1,.36,1); }
+
+  /* generic reveal */
+  .reveal{
+    opacity:0;
+    will-change: transform, opacity;
+    transition:
+      transform .7s var(--ease) var(--d,0s),
+      opacity   .7s var(--ease) var(--d,0s);
+  }
+  /* variants */
+  .reveal.fade-up    { transform: translateY(18px); }
+  .reveal.slide-right{ transform: translateX(-24px); }   /* for sidebar buttons */
+  .reveal.swing-down { transform-origin: top center; transform: rotateX(-60deg) translateY(-6px); }
+
+  /* active state */
+  .reveal.in{ opacity:1; transform: none; }
+
+  /* optional swing keyframe if you want overshoot */
+  .reveal.swing-down.in{
+    animation: swingIn .7s var(--ease) var(--d,0s) both;
+  }
+  @keyframes swingIn{
+    0%   { opacity:0; transform: rotateX(-70deg) translateY(-8px); }
+    60%  { opacity:1; transform: rotateX(8deg) translateY(2px); }
+    100% { opacity:1; transform: rotateX(0) translateY(0); }
+  }
+
+  /* ----------------------- generic styles --------------------------------*/
+    .body-text {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+                  "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+                  sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      font-weight: 400;
+      line-height: 1.6;
+      font-size: clamp(14px, 1.2vw, 18px);
+      color: #1e293b; /* Tailwind's slate-800 */
+    }
+
+    /* Scrapbook tape header */
+    .tape {
+      display:inline-block;
+      padding:.7rem 1.4rem .6rem;
+      font-family: "Chiron Sung HK", serif;
+      font-weight:700;
+      color:#fff;
+      letter-spacing:.5px;
+      /* rough torn strip */
+      clip-path: polygon(0 16%, 5% 0, 95% 6%, 100% 22%, 100% 84%, 95% 100%, 6% 94%, 0 78%);
+      filter: drop-shadow(0 6px 12px rgba(0,0,0,.15));
+      font-size: 1.5rem;
+    }
+    /* color variants to match your screenshot */
+    .tape-purple { background:#7c3aed; }   /* Photo / My Links */
+    .tape-blue   { background:#4ea0cf; }   /* Welcome */
+    .tape-green  { background:#72bf44; }   /* Featured Project */
+    .tape-mint   { background:#7fd7b1; }   /* Technical Skills */
+    .tape-yellow { background:#f2c335; }   /* Hobbies */
+
+    /* optional slight rotations for variety */
+    .rotate-s    { transform:rotate(-2deg); }
+    .rotate-m    { transform:rotate(2deg); }
+    .rotate-l    { transform:rotate(-4deg); }
+
+
+
+    /* cursive and hand written for about me */
+    /* Wide cursive */
+    .cursive {
+      font-family: "Chiron Sung HK", serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-size: clamp(24px, 3vw, 60px);
+    }
+
+    /* name banner in home */
+  .ransom-style-name{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:clamp(12px,3vw,32px); /* space between rows */
+    flex-wrap:wrap; /* allow stacking on very small screens */
+  }
+  .ransom-style-name.in {
+  opacity: 1;
+  animation: swingIn 0.8s cubic-bezier(.22,1,.36,1) both;
+}
+
+.name-banner{
+  width:100%;
+  max-width:400px; /* shrink size */
+  height:auto;
+  display:block;
+  user-select:none;
+  pointer-events:none;
+  animation:sway 1.8s steps(6) infinite alternate;
+  margin:0 auto;
+  padding:0;
+  line-height:0;
+}
+
+.mt-10 img {
+  width: 32px;     /* adjust to taste */
+  height: auto;
+}
+
+
+    /* ----------------------------------Global look----------------------------------------- */
+    body{ background: var(--paper); color: var(--ink); }
+    .ink { color: var(--ink); }
+
+    /* Replace tech gradient headline with candy-pastel gradient */
+    .grad { 
+      background: linear-gradient(90deg,var(--rose),var(--peri),var(--mint));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+
+    /* Cards now look like paper notes */
+    .card {
+      background: rgba(255,255,255,.85);
+      border: 1px dashed rgba(31,36,48,.15);
+      box-shadow: 0 6px 18px rgba(31,36,48,.08), 0 1px 0 rgba(31,36,48,.06) inset;
+      border-radius: 18px;
+    }
+
+    /* Subtle paper texture + ruled lines */
+    .paper-bg {
+      background:
+        repeating-linear-gradient(
+          0deg, transparent 0 28px, rgba(0,0,0,.04) 28px 29px
+        ),
+        radial-gradient(1000px 600px at 10% 0%, rgba(255,255,255,.6), transparent 40%),
+        var(--paper);
+    }
+
+    /* Sidebar sticky-tab vibe */
+    .tab {
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(31,36,48,.12);
+      border-radius: 14px;
+      box-shadow: 0 6px 16px rgba(31,36,48,.12);
+    }
+    .tab:hover { transform: translateY(-2px) rotate(-1deg); }
+
+    /* Pastel pills for tech bubbles */
+    .pill { 
+      background: rgba(31,36,48,.04);
+      border: 1px solid rgba(31,36,48,.18);
+      color: rgba(31,36,48,.8);
+      border-radius: 9999px;
+      padding: .25rem .75rem;
+    }
+
+  /* emoji sparkles */
+.spark{
+  position:absolute; left:var(--x); top:var(--y);
+  transform: translate(-50%,-50%) scale(.1);   /* center on that point */
+  opacity:0; will-change:transform,opacity;
+}
+
+.spark::before{ content:"✨"; font-size:38px; display:block; }
+
+/* hover or in-view triggers */
+[data-spark].inview .spark,
+[data-spark]:hover .spark{
+  animation: sparkle-pop 1s ease-out var(--delay,0s) both;
+}
+
+@keyframes sparkle-pop{
+  0%   { opacity:0; transform:translateY(8px) scale(.1) rotate(0deg); }
+  20%  { opacity:1; transform:translateY(0)   scale(1.0) rotate(8deg); } /* grows to normal */
+  60%  { opacity:1; transform:translate(var(--dx,0), var(--dy,-20px)) scale(.95) rotate(18deg); }
+  100% { opacity:0; transform:translate(var(--dx,0), var(--dy,-36px)) scale(.85) rotate(24deg); }
+}
+
+.screen-origin{
+  position:absolute;
+  left:var(--sx); top:var(--sy);
+  width:var(--sw); height:var(--sh);
+  border-radius:var(--radius);
+  pointer-events:none; z-index:20;
+}
+
+/* location, and other things under phone mockup */
+/* Top-of-screen overlay */
+.phone-screen-drop{
+  position:absolute;
+  inset: 0 6% auto 6%;          /* left/right gutters inside the screen */
+  box-sizing: border-box;
+  left:0; top:0;
+  width:100%;
+  /* Reserve only the upper band so it doesn't cover the face area */
+  padding: clamp(6px, 1.2vw, 16px) clamp(10px, 1.6vw, 18px);
+  display:flex; flex-direction:column; align-items:center; gap:.25rem;
+  pointer-events:none;                 /* never block hover */
+  opacity:0; transform: translateY(-18px);
+  animation: headerDrop 800ms cubic-bezier(.22,1,.36,1) .35s both;
+}
+
+/* Text styling that reads like iPhone UI but custom */
+.phone-screen-drop .line{
+  font-weight: 200;
+  font-size: clamp(16px, 2vw, 24px);
+  letter-spacing: .4px;
+  color: white;
+}
+.phone-screen-drop .line.small{
+  font-weight: 600;
+  font-size: clamp(12px, 1.6vw, 16px);
+}
+
+
+@keyframes headerDrop{
+  0%   { opacity:0; transform: translateY(-18px); }
+  60%  { opacity:1; transform: translateY(4px); }
+  100% { opacity:1; transform: translateY(0); }
+}
+
+
+/* Aura behind phone */
+.phone-aura{
+  position:absolute; inset:-8%;
+  background: radial-gradient(40% 40% at 50% 60%,
+    rgba(255,243,178,.65) 0%, rgba(255,243,178,.32) 40%, rgba(255,243,178,0) 70%);
+  filter: blur(16px);
+  opacity:0; transform:scale(.96); transition:opacity .25s ease, transform .25s ease;
+  z-index:0; pointer-events:none;
+}
+
+    /* smooth right->left entrance */
+.phone-reveal{
+  position: relative;
+  opacity:0;
+  transform:translate3d(90px,0,0) scale(.98);
+  will-change: transform, opacity;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+.phone-reveal img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  #about {
+    align-items: stretch;
+  }
+  .phone-reveal {
+    height: 100%;
+  }
+}
+
+
+.phone-reveal.revealed { opacity: 1; transform: none; transition: opacity .45s ease, transform .45s ease; }
+.phone-reveal.in{
+  animation: phoneSlideIn 820ms cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes phoneSlideIn{
+  0%   { opacity:0; transform:translate3d(90px,0,0) scale(.98); }
+  60%  { opacity:1; transform:translate3d(-6px,0,0) scale(1); } /* tiny overshoot */
+  100% { opacity:1; transform:translate3d(0,0,0) scale(1); }
+}
+/* accessibility */
+@media (prefers-reduced-motion: reduce){
+  .phone-reveal{ opacity:1; transform:none; animation:none !important; }
+}
+
+/* Shake on hover */
+@keyframes phone-shake{
+  0%,100%{ transform: translate3d(0,0,0) rotate(0deg); }
+  20%{ transform: translate3d(-1px,-1px,0) rotate(-0.6deg); }
+  40%{ transform: translate3d(1px,0,0) rotate(0.4deg); }
+  60%{ transform: translate3d(-1px,1px,0) rotate(-0.4deg); }
+  80%{ transform: translate3d(1px,0,0) rotate(0.6deg); }
+}
+    /* Star ratings */
+    .stars { letter-spacing:.08em }
+    .stars .on  { color: var(--rose); }
+    .stars .off { color: rgba(31,36,48,.25); }
+
+    /* Motion */
+    @keyframes floaty { 0%{transform:translateY(0)} 50%{transform:translateY(-8px)} 100%{transform:translateY(0)} }
+    @keyframes pop   { 0%{transform:scale(.8);opacity:0} 100%{transform:scale(1);opacity:1} }
+    @keyframes wiggle{ 0%,100%{transform:rotate(0)} 50%{transform:rotate(-2deg)} }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+    .pop    { animation: pop .5s ease-out both; }
+    .wiggle { animation: wiggle 2.8s ease-in-out infinite; }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .floaty,.pop,.wiggle{ animation:none }
+    }
+
+    /* Hover triggers */
+.phone-reveal:hover .phone-aura{ opacity:1; transform:scale(1); }
+.phone-reveal:hover img{ animation: phone-shake .6s ease-in-out; }
+.phone-reveal:hover .spark{ animation: sparkle-pop 1s ease-out var(--delay,0s) both; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .phone-aura, .spark{ transition:none; animation:none !important; }
+  .phone-reveal{ opacity:1; transform:none; }
+}
+
+/*----------------------------------------scroll animations----------------------------------------------------*/
+
+/* base */
+.sr{ opacity:0; will-change:transform,opacity; transition:
+      transform .6s var(--ease) var(--d,0s),
+      opacity   .6s var(--ease) var(--d,0s); }
+
+/* variants */
+.sr.fade   { transform: translateY(14px); }
+.sr.pop    { transform: translateY(14px) scale(.96); }
+
+/* when visible */
+.sr.in{ opacity:1; transform:none; }
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .sr{ transition:none; transform:none; opacity:1; }
+}
+
+
+    /* -------------------------------------------LOADER CSS----------------------------------------------  */
+    /* keep page from flashing while loader shows (removed in JS) */
+    html.loading { overflow: hidden; }
+
+    /* strawberry pulse: big→small→big→small */
+    .strawberry {
+      animation: berryPulse 2.2s ease-in-out infinite;
+      will-change: transform;
+    }
+    @keyframes berryPulse {
+      0%   { transform: scale(1); }
+      20%  { transform: scale(1.07); }
+      40%  { transform: scale(0.98); }
+      60%  { transform: scale(1.04); }
+      80%  { transform: scale(0.99); }
+      100% { transform: scale(1); }
+    }
+
+    /* overlay fade, strawberry zoom away */
+    #loader { transition: opacity .6s ease; }
+    #loader.done { opacity: 0; pointer-events: none; }
+    #loader.done .strawberry { animation: zoomAway .6s ease forwards; }
+
+    @keyframes zoomAway {
+      to { transform: scale(1.4); opacity: 0; }
+    }
+
+    /* While loader is visible, don’t paint the reveal elements at all */
+html.loading .reveal,
+html.loading .ransom-style-name {
+  visibility: hidden;           /* prevents the “preloaded” flash */
+}
+
+/* When we’re about to reveal, allow paint but keep start state */
+html.prereveal .reveal,
+html.prereveal .ransom-style-name {
+  visibility: visible;
+}
+
+/* Smoother 3D swing & transforms */
+.ransom-style-name,
+.reveal {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+
+
+  </style>
+
+  <!-- ================================================================================================================================================================
+   ====================================================================================================================================================================
+                                                                       HTML TEMPLATE
+   ====================================================================================================================================================================
+   ==================================================================================================================================================================== -->
+
+</head>
+<body class="antialiased selection:bg-rose-300/40">
+
+<!-- ======================================================       LOADER        ====================================================================================== -->
+<!-- Loader -->
+<div id="loader"
+     class="fixed inset-0 z-[9999] flex flex-col items-center justify-center gap-4 bg-[#fbf6ef] text-slate-700">
+  <!-- Strawberry -->
+  <img src="assets/strawberry.png" alt="Loading"
+       class="strawberry w-40 h-50" onerror="this.replaceWith(document.createTextNode('🍓'))">
+
+  <!-- Progress bar -->
+  <div class="w-64 h-2 rounded-full bg-slate-200 overflow-hidden">
+    <div id="loader-bar" class="h-full w-0 bg-pink-500 transition-[width] duration-200"></div>
+  </div>
+  <div id="loader-percent" class="text-sm font-medium">0%</div>
+</div>
+
+<div id="app">
+  <!-- Sidebar -->
+  <nav class="hidden md:flex fixed left-0 top-0 h-full w-20 flex-col items-center justify-start pt-6 space-y-5 z-50">
+  <a href="#home"      class="tab p-3 floaty" style="--d:.10s animation-delay:.0s">🏠</a>
+  <a href="#about"     class="tab p-3 floaty" style="--d:.20s animation-delay:.2s">👤</a>
+  <a href="#experience"class="tab p-3 floaty" style="--d:.25s animation-delay:.4s">💼</a>
+  <a href="#projects"  class="tab p-3 floaty" style="--d:.30s animation-delay:.6s">🧩</a>
+  <a href="#skills"    class="tab p-3 floaty" style="--d:.35s animation-delay:.8s">⭐</a>
+  <a href="#contact"   class="tab p-3 floaty" style="--d:.45s animation-delay:1.0s">✉️</a>
+</nav>
+
+
+  <!-- Hero -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden paper-bg">
+  <!-- optional background overlay behind everything -->
+  <div class="absolute inset-0 -z-10"></div>
+
+  <!-- content (on top) -->
+   
+    <div class="relative z-10 max-w-4xl px-6">
+      <!-- name w ransom style lettering -->
+      <div class="ransom-style-name">
+        <img src="assets/Maisoon-banner-name.svg" class="name-banner" alt="Maisoon">
+        <img src="assets/Rahman-banner-name.svg" class="name-banner" alt="Rahman">
+      </div>
+
+      <p class="reveal fade-up cursive" style="--d:.10s">Creative Software Developer</p>
+      <p class="reveal fade-up text-lg leading-relaxed mt-4 text-slate-800 " style="--d:.10s">
+        I’m a creative software developer with a background in art and design, driven by the belief that technology can be both functional and expressive. I love crafting interfaces and tools that merge aesthetic 
+        storytelling with technical precision — transforming data, systems, and ideas into experiences that feel intuitive and visually engaging. My work bridges software development, user experience, and art, 
+        reflecting a constant pursuit of balance between creativity and clarity in everything I build.
+      </p>
+      <div class="mt-8 flex items-center justify-center gap-4">
+        <a href="#projects" class="px-6 py-3 rounded-xl card hover:bg-white/10">View My Work</a>
+        <a href="#contact" class="px-6 py-3 rounded-xl card hover:bg-white/10">Get in Touch</a>
+      </div>
+      <div class="mt-10 flex items-center justify-center gap-6 text-2xl">
+        <a href="https://github.com/maisoonrahman" class="hover:opacity-80" aria-label="GitHub">
+          <img src="assets/GithubOctocat.svg">
+        </a>
+        <a href="https://linkedin.com/maisoonrahman" class="hover:opacity-80" aria-label="LinkedIn">
+          <img src="assets/Linkedin.svg">
+        </a>
+        <a href="assets/MaisoonRahman_CV_SWEandData.pdf" download class="hover:opacity-80" aria-label="Resume">
+          <img src="assets/resume.svg">
+        </a>
+      </div>
+      <!-- stickers (middle layer) -->
+     <img src="/assets/bluepaper.svg" alt="" aria-hidden="true"
+         class="absolute -z-10 pointer-events-none select-none transform-gpu
+                w-[32vw] max-w-[520px] min-w-[260px] rotate-[-90deg]"
+         style="top:6%; left:-6%;">
+
+    <!-- Yellow paper -->
+    <img src="/assets/yellowpaper.svg" alt="" aria-hidden="true"
+         class="absolute -z-10 pointer-events-none select-none transform-gpu
+                w-[28vw] max-w-[460px] min-w-[220px] rotate-[18deg]"
+         style="top:18%; right:4%;">
+
+    <!-- Pink paper -->
+    <img src="/assets/pinkpaper.svg" alt="" aria-hidden="true"
+         class="absolute -z-10 pointer-events-none select-none transform-gpu
+                w-[26vw] max-w-[420px] min-w-[200px] rotate-[60deg]"
+         style="bottom:-6%; right:6%;">
+    </div>
+
+
+</section>
+
+
+  <!-- About -->
+  <section id="about" class="relative py-24 paper-bg">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="tape tape-purple rotate-s sr pop">About Me</h2>
+        <p class=" sr fade mt-4 text-slate-800">
+          I’m a creative developer who blends software, data, and design to make
+          useful tools and delightful experiences. My journey so far includes building
+          full‑stack apps, experimenting with AI‑assisted workflows, and shipping
+          polished UI that puts people first.
+        </p>
+        <p class="sr fade mt-4 text-slate-800">
+          I enjoy projects where I can turn messy, complex ideas into clear,
+          interactive stories. Always learning, always building.
+        </p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="card sr pop rounded-2xl p-5">
+            <div class="text-xl font-semibold">Education</div>
+            <div class="mt-2 text-sm text-slate-800">
+              B.S. in Computer Science • Case Western Reserve University 
+            </div>
+          </div>
+          <div class="card sr pop rounded-2xl p-5">
+            <div class="text-xl font-semibold">Experience</div>
+            <div class="mt-2 text-sm text-slate-800">
+              Frontend & full‑stack internships, data‑driven side projects
+            </div>
+          </div>
+          <div class="card sr pop rounded-2xl p-5">
+            <div class="text-xl font-semibold">Specialization</div>
+            <div class="mt-2 text-sm text-slate-800">
+              Data‑informed UX, full‑stack web, AI‑assisted development
+            </div>
+          </div>
+          <div class="card sr pop rounded-2xl p-5">
+            <div class="text-xl font-semibold">Interests</div>
+            <div class="mt-2 text-sm text-slate-800">
+              Webtoons & pop‑culture analytics, gamey interfaces, mixed‑media art
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Phone mockup from Canva -->
+
+  <div class="phone-reveal group justify-center relative max-w-none w-[36rem] md:w-[40rem] lg:w-[40rem] lg:translate-x-1 lg:-mr-8 floaty" 
+      style="animation-duration:8s;
+              --sx:15%;  /* left  offset of screen window  */
+              --sy:17%;  /* top   offset of screen window  */
+              --sw:70%;  /* width  of screen window        */
+              --sh:67%;  /* height of screen window        */
+              --radius:28px; /* screen corner radius */
+      ">
+    <!-- Glow aura (optional) -->
+    <div class="phone-aura" aria-hidden="true"></div>  
+
+    <!-- Phone frame PNG (with transparent screen hole) -->
+    <img src="assets/phone-mockup.svg" alt="phone frame" class="block w-full h-auto relative z-10 select-none pointer-events-none">
+    <div class="screen-origin" aria-hidden="'true">
+      <div class="phone-screen-drop">
+        <div class="line">📍 NY • OH • Dhaka</div>
+        <div class="line">💻 Full-Stack • Data • AI</div>
+      </div>
+    <span class="spark" style="--x:50%; --y:88%; --delay:.05s"></span>
+    <span class="spark" style="--x:78%; --y:60%; --delay:.15s"></span>
+    <span class="spark" style="--x:92%; --y:90%; --delay:.15s"></span>
+    <span class="spark" style="--x:28%; --y:38%; --delay:.25s"></span>
+      </div></div>
+
+
+</div>
+
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-24 paper-bg">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="tape sr pop tape-blue rotate-m">Experience</h2>
+      <div class="mt-8 space-y-6">
+        <!-- experience 1 -->
+        <div class="card sr pop rounded-2xl p-6">
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="text-2xl font-semibold">Frontend Intern | Millennium Information Solutions Ltd.</div>
+            <div class="text-slate-800">Aug 2025 - Dec 2025 • Remote</div>
+          </div>
+          <ul class="mt-3 list-disc pl-6 text-slate-700 space-y-2">
+            <li>Engineered and deployed a client-facing banking application across the full software development lifecycle (SDLC), from
+ requirements gathering to production.</li>
+            <li>Integrated REST APIs with front-end components, collaborating with backend engineers to ensure system reliability and
+ scalability.</li>
+          </ul>
+        </div>
+        <!-- Duplicate the card above for more roles -->
+         <!-- experience 2 -->
+         <div class="card sr pop rounded-2xl p-6">
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="text-2xl font-semibold">Software Engineer Intern | Federal Reserve Bank of Cleveland</div>
+            <div class="text-slate-800">Jun 2024 - Nov 2024 • Cleveland, OH</div>
+          </div>
+          <ul class="mt-3 list-disc pl-6 text-slate-700 space-y-2">
+            <li>Optimized UI responsiveness by building financial tools with .NET, Angular, TypeScript, HTML, and CSS, and streamlined
+ deployments to AWS using Docker.</li>
+            <li>Implemented CI/CD pipelines using YAML to automate deployments and promote a test-driven development (TDD)
+ workflow.</li>
+            <li> Managed tasks and sprints within Azure DevOps, collaborating in daily standups and sprint planning sessions to ensure
+ on-time delivery.</li>
+          </ul>
+        </div>
+        <!-- experience 3 -->
+        <div class="card sr pop rounded-2xl p-6">
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="text-2xl font-semibold">Backend Developer | SPiDLab at Case Western Reserve University</div>
+            <div class="text-slate-800">May 2023 - May 2024 • Cleveland, OH</div>
+          </div>
+          <ul class="mt-3 list-disc pl-6 text-slate-700 space-y-2">
+            <li> Designed and implemented the backend of a secure genomics research platform using Flask and MongoDB, integrating it
+ with a React frontend, ensuring seamless API communication for an IRB compliant genomics website for researchers.</li>
+            <li>Led weekly team syncs and coordinated Kanban boards to track progress and deliverables.</li>
+          </ul>
+        </div>
+        <!-- experience 4 -->
+        <div class="card sr pop rounded-2xl p-6">
+          <div class="flex flex-wrap items-center gap-3">
+            <div class="text-2xl font-semibold">Data Analyst & Research Assistant | Baker Lab at Cleveland Clinic</div>
+            <div class="text-slate-800">Jun 2023 - Nov 2023 • Cleveland, OH</div>
+          </div>
+          <ul class="mt-3 list-disc pl-6 text-slate-700 space-y-2">
+            <li> Analyzed biomedical datasets and developed predictive models in Python and MATLAB.</li>
+            <li>Created dashboards and reports to communicate statistical findings for ongoing clinical trials.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 paper-bg">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="tape sr fade tape-green rotate-l">My Projects</h2>
+      <div class="mt-8 grid sm:grid-cols-2 gap-6">
+        <article class="card sr pop rounded-2xl p-6">
+          <div class="text-2xl font-semibold">Biological Clock Ensemble using Kalman Filtering</div>
+            <div class="space-y-3 mt-3">
+            <!-- Role -->
+            <div class="flex items-center gap-2 text-sm text-slate-800">
+              <img src="assets/Person.svg" class="w-4 h-4 invert" alt="role icon">
+              <span>Developer</span>
+            </div>
+            <!-- Tech bubbles -->
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="pill text-sm">Python</span>
+              <span class="pill text-sm">Seaborn</span>
+              <span class="pill text-sm">matplotlib</span>
+              <span class="pill text-sm">pandas</span>
+            </div>
+          </div>
+
+          <p class="mt-4 text-slate-800"> Senior capstone project with group to ingest biometric data from Apple Watches to model circadian rhythm patterns using Kalman Filtering which translated physiological data into visual insights to simulate patient SCN activity patterns</p>
+          <ul class="mt-3 list-disc pl-6 text-slate-700 space-y-1">
+            <li>Literature review to understand the applications of Kalman Filtering.</li>
+            <li>Further applications include building a data visualization pipeline to give real insights to users.</li>
+            <li>Check out our paper and code!</li>
+          </ul>
+          <div class="mt-5 flex gap-4">
+              <a href="https://github.com/Asyaakkusss/Senior-Project-Modeling-Noah" target="_blank" rel="noopener noreferrer"
+                class="group relative p-5 rounded-2xl bg-white/0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(99,102,241,0.4)]">
+                <img src="assets/GithubOctocat.svg" class="w-10 h-10 transition-transform duration-300 group-hover:scale-110" alt="GitHub">
+              </a>
+              <a href="assets/KalmanFilterPaper.pdf" target="_blank" rel="noopener noreferrer"
+              class="group relative p-5 rounded-2xl bg-white/0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)]">
+                <img src="assets/resume.svg" alt="Paper" class="w-10 h-10 transition-transform duration-300 group-hover:scale-110">
+              </a>
+              <a href="assets/KalmanFilterPoster.pdf" target="_blank" rel="noopener noreferrer"
+              class="group relative p-5 rounded-2xl bg-white/0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)]">
+                <img src="assets/resume.svg" alt="Paper" class="w-10 h-10 transition-transform duration-300 group-hover:scale-110">
+              </a>
+            </div>
+        </article>
+        <article class="card sr pop rounded-2xl p-6">
+          <div class="text-2xl font-semibold">Melody Mapper</div>
+          <div class="space-y-3 mt-3">
+            <!-- Role -->
+            <div class="flex items-center gap-2 text-sm text-slate-800">
+              <img src="assets/Person.svg" class="w-4 h-4 invert" alt="role icon">
+              <span>Scrum Master, Technical Writer</span>
+            </div>
+            <!-- Tech bubbles -->
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="pill text-sm">Python</span>
+              <span class="pill text-sm">HPC</span>
+              <span class="pill text-sm">NLP</span>
+            </div>
+          </div>
+          <p class="mt-4 text-slate-800">HPC class project where we built an NLP-based model to analyze media content (song lyrics) and predict themes, simulating real-world applications
+ like viewer or listener behavior modeling. </p>
+          <ul class="mt-3 list-disc pl-6 text-slate-700 space-y-1">
+            <li>Deployed the model on a high-performance computing cluster for scalable training/testing on large datasets.</li>
+            <li>Used the Spotify API to gather data.</li>
+            <li>Check out our paper and code!</li>
+          </ul>
+          <div class="mt-5 flex gap-4">
+              <a href="https://colab.research.google.com/drive/1iOAEl0k_pW1es9q90Xma3EZZgOC3z_D0" target="_blank"
+                class="group relative p-5 rounded-2xl bg-white/0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(99,102,241,0.4)]">
+                <img src="assets/GithubOctocat.svg" class="w-10 h-10 transition-transform duration-300 group-hover:scale-110" alt="GitHub">
+              </a>
+              <a href="assets/MelodyMapperPresentation.pdf" target="_blank" rel="noopener noreferrer"
+              class="group relative p-5 rounded-2xl bg-white/0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)]">
+                <img src="assets/resume.svg" alt="Paper" class="w-10 h-10 transition-transform duration-300 group-hover:scale-110">
+              </a>
+            </div>
+        </article>
+        <article class="card sr pop rounded-2xl p-6">
+          <div class="text-2xl font-semibold">Paw-modoro Timer</div>
+          <div class="space-y-3 mt-3">
+            <!-- Role -->
+            <div class="flex items-center gap-2 text-sm text-slate-800">
+              <img src="assets/Person.svg" class="w-4 h-4 invert" alt="role icon">
+              <span>UI Designer, Database Designer & Administrator, Developer</span>
+            </div>
+            <!-- Tech bubbles -->
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="pill text-sm">React</span>
+              <span class="pill text-sm">Express</span>
+              <span class="pill text-sm">JavaScript</span>
+              <span class="pill text-sm">Amazon RDS</span>
+              <span class="pill text-sm">Figma</span>
+            </div>
+          </div>
+          <p class="mt-4 text-slate-800">A pomodoro timer app that seeks to gameify the experience of productivity to engage users and build community using "mini battles" between users that compare productivity hours. </p>
+          <ul class="mt-3 list-disc pl-6 text-slate-700 space-y-1">
+            <li>Served as Database Designer & Administrator, creating schema and managing AWS RDS instance.</li>
+            <li>Implemented backend logic for long-term user data tracking and integrated REST APIs.</li>
+            <li>Led Agile sprint planning and feature prioritization for a gamified productivity application.</li>
+          </ul>
+
+          <div class="mt-5 flex gap-4">
+              <a href="https://github.com/Asyaakkusss/hungry-cat-main" target="_blank"
+                class="group relative p-5 rounded-2xl bg-white/0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(99,102,241,0.4)]">
+                <img src="assets/GithubOctocat.svg" class="w-10 h-10 transition-transform duration-300 group-hover:scale-110" alt="GitHub">
+              </a>
+            </div>
+
+        </article>
+        <article class="card sr pop rounded-2xl p-6">
+          <div class="text-2xl font-semibold">Nap Quest</div>
+            <div class="space-y-3 mt-3">
+            <!-- Role -->
+            <div class="flex items-center gap-2 text-sm text-slate-800">
+              <img src="assets/Person.svg" class="w-4 h-4 invert" alt="role icon">
+              <span>Level Designer, Developer, Asset Designer, Product Manager</span>
+            </div>
+            <!-- Tech bubbles -->
+            <div class="flex flex-wrap gap-2 mt-3">
+              <span class="pill text-sm">Unity</span>
+              <span class="pill text-sm">C#</span>
+              <span class="pill text-sm">Procreate</span>
+            </div>
+          </div>
+          <p class="mt-4 text-slate-800">A 2D game built on Unity (C#) that seeks to emulate early 2000s flash drive games to tap onto the nostalgia factor of players.</p>
+          <ul class="mt-3 list-disc pl-6 text-slate-700 space-y-1">
+            <li>Managed sprint cycles and led game asset coordination and code integration for a published Unity project.</li>
+            <li>Applied software project management principles to a fully scoped group software product.</li>
+            <li> Collected and analyzed playtesting feedback to implement design changes that improved player retention and overall user
+ engagement.</li>
+            </ul>
+
+            <div class="mt-5 flex gap-4">
+              <a href="https://github.com/cwru-courses/SPRING2025ECSE290Team14" target="_blank"
+                class="group relative p-5 rounded-2xl bg-white/0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(99,102,241,0.4)]">
+                <img src="assets/GithubOctocat.svg" class="w-10 h-10 transition-transform duration-300 group-hover:scale-110" alt="GitHub">
+              </a>
+              <a href="https://jdanninger.itch.io/nap-quest" target="_blank"
+              class="group relative p-5 rounded-2xl bg-white/0 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_15px_rgba(236,72,153,0.4)]">
+                <img src="assets/Videogame.svg" alt="Paper" class="w-10 h-10 transition-transform duration-300 group-hover:scale-110">
+              </a>
+            </div>
+
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-24 paper-bg">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="tape sr pop tape-mint rotate-s">Skills & Expertise</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="card sr pop rounded-2xl p-6">
+          <div class="font-semibold">Programming</div>
+          <div class="space-y-3 mt-4">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">Python</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ★ ★</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">JavaScript</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ★ ☆</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">React</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ☆ ☆</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">SQL</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ☆ ☆</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="card sr pop rounded-2xl p-6">
+          <div class="font-semibold">Frameworks & Tools</div>
+          <div class="space-y-3 mt-4">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">React</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ★ ☆</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">Angular</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ★ ★</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">Node.js</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ☆ ☆</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">Flask</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ☆ ☆</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">.NET</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ☆ ☆ ☆</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">TailwindCSS</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ☆ ☆ ☆</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card sr pop rounded-2xl p-6">
+          <div class="font-semibold">Cloud & DevOps</div>
+          <div class="space-y-3 mt-4">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">Amazon RDS</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ★ ★</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">AWS S3</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ☆ ☆</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">Docker</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ★ ☆</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-700">CI/CD pipelines</span>
+              <div class="flex gap-1">
+                <span class="text-fuchsia-400 text-lg">★ ★ ★ ★ ★ ☆</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 paper-bg">
+    <div class="max-w-xl mx-auto px-6 text-center">
+      <h2 class="tape sr pop tape-yellow rotate-m">Get in Touch</h2>
+      <p class="mt-4 sr fade text-slate-700">
+        Email me at <a class="underline" href="mailto:maisoon.a.rahman@gmail.com">maisoon.a.rahman@gmail.com</a>.
+        Links above for GitHub and LinkedIn.
+      </p>
+    </div>
+  </section>
+
+  <footer class="py-12 text-center text-slate-500">© <span id="y"></span> Maisoon A Rahman</footer>
+  <script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+</div>
+</body>
+</html>
+
+
+
+<!-- ==================================================================================================================================================================
+   ====================================================================================================================================================================
+                                                                        JS SCRIPT
+   ====================================================================================================================================================================
+   ==================================================================================================================================================================== -->
+
+<!-- 1) Phone “.in” reveal (no name collision) -->
+<script>
+(() => {
+  const phoneIO = new IntersectionObserver((entries, obs) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target); // run once
+      }
+    });
+  }, { threshold: 0.18 });
+
+  document.querySelectorAll('.phone-reveal').forEach(el => phoneIO.observe(el));
+})();
+</script>
+
+<!-- 2) Phone sparkles module (kept self-contained) -->
+<script>
+(() => {
+  const el = document.querySelector('.phone-reveal');
+  if (!el) return;
+
+  el.querySelectorAll('.spark').forEach(s => {
+    s.style.setProperty('--dx', `${(Math.random()*24 - 12).toFixed(1)}px`);
+    s.style.setProperty('--dy', `${(-22 - Math.random()*18).toFixed(1)}px`);
+  });
+
+  const firstViewIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        el.classList.add('revealed');
+        el.classList.add('inview');
+        setTimeout(() => el.classList.remove('inview'), 1100);
+      }
+    });
+  }, { threshold: 0.35 });
+  firstViewIO.observe(el);
+
+  const retriggerIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting && el.classList.contains('revealed')) {
+        el.classList.add('inview');
+        setTimeout(() => el.classList.remove('inview'), 1100);
+      }
+    });
+  }, { threshold: 0.8 });
+  retriggerIO.observe(el);
+
+  el.addEventListener('touchstart', () => {
+    el.classList.add('inview');
+    setTimeout(() => el.classList.remove('inview'), 1100);
+  }, { passive:true });
+
+  const style = document.createElement('style');
+  style.textContent = `.phone-reveal.inview .spark{animation:sparkle-pop 1s ease-out var(--delay,0s) both}`;
+  document.head.appendChild(style);
+})();
+</script>
+
+<!-- 3) Loader with fake duration + intro reveals -->
+<script>
+(() => {
+  document.documentElement.classList.add('loading');
+
+  const loader = document.getElementById('loader');
+  const barEl  = document.getElementById('loader-bar');
+  const pctEl  = document.getElementById('loader-percent');
+
+  const MIN_TIME = 4000;   // 3k–5k as desired
+  const FADE_MS  = 600;
+
+  let prog = 0, rafId;
+  function setProgress(p){
+    const v = Math.max(0, Math.min(100, p));
+    if (barEl) barEl.style.width = v + '%';
+    if (pctEl) pctEl.textContent = Math.round(v) + '%';
+  }
+  function tweenTo(target, duration){
+    const from = prog, t0 = performance.now();
+    cancelAnimationFrame(rafId);
+    function step(t){
+      const k = Math.min(1, (t - t0) / duration);
+      const e = k < .5 ? 4*k*k*k : 1 - Math.pow(-2*k + 2, 3)/2;
+      prog = from + (target - from) * e;
+      setProgress(prog);
+      if (k < 1) rafId = requestAnimationFrame(step);
+    }
+    rafId = requestAnimationFrame(step);
+  }
+
+  const fakeTimer = setInterval(() => {
+    const inc = (100 / (MIN_TIME / 300)) + Math.random()*2;
+    tweenTo(Math.min(100, prog + inc), 300);
+    if (prog >= 100) clearInterval(fakeTimer);
+  }, 300);
+
+  function startReveals(){
+    document.documentElement.classList.add('prereveal');
+    const els = document.querySelectorAll('.reveal, .ransom-style-name');
+    requestAnimationFrame(() => {
+      els.forEach(el => el.classList.add('in'));
+      requestAnimationFrame(() => document.documentElement.classList.remove('prereveal'));
+    });
+  }
+
+  setTimeout(() => {
+    tweenTo(100, 500);
+    if (loader) loader.classList.add('done');
+    setTimeout(() => {
+      if (loader) loader.remove();
+      document.documentElement.classList.remove('loading');
+      startReveals();
+    }, FADE_MS);
+  }, MIN_TIME);
+})();
+</script>
+
+<!-- 4) Scroll reveals (about text fade, cards pop) -->
+<script>
+(() => {
+  const srIO = new IntersectionObserver((entries, obs) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.15, rootMargin: "0px 0px -10%" });
+
+  // Stagger within containers that declare data-stagger
+  document.querySelectorAll('[data-stagger]').forEach(box => {
+    box.querySelectorAll('.sr').forEach((el, i) => {
+      el.style.setProperty('--d', (i * 0.08) + 's');
+      srIO.observe(el);
+    });
+  });
+
+  // Any standalone items
+  document.querySelectorAll('.sr:not([style*="--d"])').forEach(el => srIO.observe(el));
+})();
+</script>
