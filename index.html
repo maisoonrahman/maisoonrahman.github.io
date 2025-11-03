@@ -404,6 +404,126 @@ html.prereveal .ransom-style-name {
   will-change: transform, opacity;
 }
 
+/* ===== Mobile-first fixes (≤640px) ===== */
+@media (max-width: 640px){
+  html, body{ overflow-x:hidden; }
+
+  /* Hero spacing and type */
+  #home{ padding:72px 16px 56px; }
+  .ransom-style-name{ gap:10px; }
+  .name-banner{ max-width:280px; }
+  .cursive{ font-size: clamp(20px, 7vw, 32px); }
+
+  /* Phone mockup keeps position, just scales to viewport */
+  .phone-reveal{
+    width:min(94vw, 26rem);
+    margin-left:auto; margin-right:auto;
+    transform:translate3d(40px,0,0) scale(.98); /* matches your slide-in vector */
+  }
+  .phone-reveal.in{ transform:none; } /* end state clean */
+
+  /* Text on top of phone screen: more legible on real phones */
+  .phone-screen-drop{
+    inset: 0 8% auto 8%;
+    padding:8px 10px;
+  }
+  .phone-screen-drop .line{
+    font-size: clamp(14px, 3.8vw, 18px);
+    text-shadow: 0 1px 2px rgba(0,0,0,.35);
+  }
+  .phone-screen-drop .line.small{
+    font-size: clamp(12px, 3.2vw, 16px);
+  }
+
+  /* Cards and general compacting */
+  .card{ border-radius:14px; }
+
+  /* Decorative stickers are heavy on small screens; hide them */
+  #home img[aria-hidden="true"]{ display:none; }
+}
+
+/* Slightly wider small phones (≤768px): give the phone a bit more room */
+@media (max-width: 768px){
+  .phone-reveal{ width:min(92vw, 30rem); }
+}
+
+/* ----- About section mobile fixes (≤640px) ----- */
+@media (max-width: 640px){
+  /* Ensure single-column layout keeps vertical spacing */
+  #about > .grid{
+    grid-template-columns: 1fr;     /* override md:grid-cols-2 */
+    row-gap: 1.5rem;                /* preserve gap between text and phone */
+  }
+
+  /* Make the phone block cooperate with the grid */
+  #about .phone-reveal{
+    width: min(92vw, 28rem) !important;  /* ignore fixed w-[36rem]/[40rem] */
+    margin: 0 auto;                      /* center inside the column */
+    transform: none !important;          /* prevent sideways push-in on load */
+    opacity: 1;                          /* visible without overlap */
+    float: none;                         /* neutralize any floaty side effects */
+  }
+
+  /* Remove negative margins and translations from utility classes on mobile */
+  #about .phone-reveal{
+    translate: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Tighter, readable overlay text inside the phone on real phones */
+  #about .phone-screen-drop{
+    inset: 0 8% auto 8%;
+    padding: 8px 10px;
+  }
+  #about .phone-screen-drop .line{ font-size: clamp(12px, 3.5vw, 16px); }
+  #about .phone-screen-drop .line.small{ font-size: clamp(10px, 3vw, 14px); }
+}
+
+/* Small tablets (≤768px): keep it friendly */
+@media (max-width: 768px){
+  #about .phone-reveal{ width: min(94vw, 32rem) !important; }
+}
+
+/* --- Fix phone alignment on small screens --- */
+@media (max-width:640px){
+  #about .max-w-5xl, 
+  #about .px-6 { padding-left:16px; padding-right:16px; }
+
+  #about .phone-reveal{
+    margin-left:auto; 
+    margin-right:auto;
+    width:min(92vw,28rem) !important;
+    transform:none !important;
+  }
+  #about .phone-reveal img{ display:block; margin:0 auto; }
+}
+
+/* --- Center overlay text on phone “screen” --- */
+@media (max-width:640px){
+  :root{
+    --sx: 12%;  /* left offset inside phone image */
+    --sy: 9%;   /* top offset */
+    --sw: 76%;  /* screen width */
+    --sh: 66%;  /* screen height */
+  }
+
+  #about .screen-origin{ 
+    left:var(--sx); top:var(--sy);
+    width:var(--sw); height:var(--sh);
+  }
+
+  #about .phone-screen-drop{
+    position: absolute; /* ensure it's anchored inside the phone */
+    top: -2%;            /* smaller = closer to top, try 0–5% */
+    left: var(--sx);
+    width: var(--sw);
+    display:flex; 
+    text-align:center;
+    padding:8px 10px;
+  }
+}
+
+
 
 
   </style>
