@@ -1,0 +1,15 @@
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: banner-scroll 25s linear infinite;
+  will-change: transform;
+}
+
+@keyframes banner-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

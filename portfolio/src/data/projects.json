@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "owner": "maisoonrahman",
+    "name": "paw-modoro-timer",
+    "title": "Paw-Modoro Timer",
+    "description": "A gamified productivity app with an AWS RDS-backed schema, REST API backend logic, and automated test cases to improve functionality and user experience.",
+    "tags": ["react", "express", "javascript", "amazon-rds", "rest-api", "testing"],
+    "github": "",
+    "demo": "",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "owner": "maisoonrahman",
+    "name": "biological-clock-ensemble",
+    "title": "Biological Clock Ensemble using Kalman Filtering",
+    "description": "A Python-based project that builds biometric data pipelines and applies Kalman Filtering to model circadian rhythms.",
+    "tags": ["python", "data-pipeline", "kalman-filtering", "biometrics"],
+    "github": "",
+    "demo": "",
+    "featured": false
+  },
+  {
+    "id": 3,
+    "owner": "maisoonrahman",
+    "name": "melody-mapper",
+    "title": "Melody Mapper",
+    "description": "An NLP project that analyzes song lyrics and runs on a high-performance computing cluster for large-scale theme prediction.",
+    "tags": ["python", "hpc", "nlp", "machine-learning", "data-analysis"],
+    "github": "",
+    "demo": "",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "owner": "maisoonrahman",
+    "name": "nap-quest",
+    "title": "Nap Quest",
+    "description": "A published Unity game where I served as product manager and developer, wrote test cases, and used playtesting feedback to improve user experience and engagement.",
+    "tags": ["unity", "c-sharp", "procreate", "game-dev", "product-management", "testing"],
+    "github": "",
+    "demo": "",
+    "featured": true
+  }
+]

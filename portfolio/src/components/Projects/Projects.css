@@ -1,0 +1,17 @@
+.project-track {
+  animation: project-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+.project-marquee:hover .project-track {
+  animation-play-state: paused;
+}
+
+@keyframes project-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
