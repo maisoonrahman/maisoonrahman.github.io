@@ -5,7 +5,7 @@ import BaseCard from "./BaseCard";
 export default function ManhwaCard() {
   return (
     <BaseCard
-    title="Current Manhwa"
+    title="Now Reading..."
     icon={<Book size={18} />}
     className="min-h-[260px]">
 

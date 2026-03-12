@@ -11,7 +11,7 @@ export default function SpotifyCard() {
 
   return (
     <BaseCard 
-    title="Currently Music"
+    title="Now Playing.."
     icon={<Music size={18} />}
     className="min-h-[260px]" >
 
