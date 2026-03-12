@@ -5,7 +5,7 @@ import PreferencesCard from "./PreferencesCard"
 import GithubCard from "./GithubCard"
 import ConnectCard from "./ConnectCard"
 
-export default function ExtrasSection() {
+export default function ExtrasSection({ theme, setTheme }) {
   return (
     <section className="max-w-7xl mx-auto px-6 py-12">
 
@@ -22,7 +22,7 @@ export default function ExtrasSection() {
         <LocationCard />
         <SpotifyCard />
         <ManhwaCard />
-        <PreferencesCard />
+        <PreferencesCard theme={theme} setTheme={setTheme} />
 
         <GithubCard />
         <ConnectCard />

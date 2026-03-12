@@ -16,13 +16,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[var(--bg-app)] text-[var(--text-main)]">
-      <HeroBanner theme={theme} setTheme={setTheme} />
+      <HeroBanner />
 
       <main className="mx-auto w-full max-w-6xl px-6 py-8">
 
         <BioSection />
         <Projects />
-        <ExtrasSection />
+        <ExtrasSection theme={theme} setTheme={setTheme} />
 
       </main>
     </div>

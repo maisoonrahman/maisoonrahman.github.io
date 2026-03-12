@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Palette } from "lucide-react"
+import { Coffee } from "lucide-react"
 import BaseCard from "./BaseCard"
-import coffeeIcon from "../../assets/coffee.png"
 
 function PreferenceToggle({
   label,
@@ -18,45 +18,25 @@ function PreferenceToggle({
       </span>
 
       <div className="flex items-center gap-3">
-        <span
-          className={`text-sm transition ${
-            !checked ? "text-[var(--text)] font-semibold" : "text-[var(--text-muted)] opacity-70"
-          }`}
-        >
+        <span className={!checked ? "text-sm font-semibold text-[var(--text)]" : "text-sm opacity-70"}>
           {leftText}
         </span>
 
         <button
           type="button"
           onClick={onToggle}
-          aria-pressed={checked}
-          className={`
-            relative h-11 w-[92px] rounded-full border
-            border-[rgba(255,255,255,0.28)]
-            bg-[rgba(10,10,20,0.28)]
-            transition-colors duration-300
-            focus:outline-none focus:ring-2 focus:ring-[rgba(255,255,255,0.18)]
-          `}
+          className="relative h-11 w-[92px] rounded-full border border-[rgba(255,255,255,0.28)] bg-[rgba(10,10,20,0.28)] transition"
         >
           <span
-            className={`
-              absolute top-1 h-9 w-9 rounded-full
-              bg-[rgb(193,194,255)]
-              shadow-[0_4px_12px_rgba(0,0,0,0.25)]
-              transition-all duration-300
-              flex items-center justify-center overflow-hidden
-              ${checked ? "left-[48px]" : "left-1"}
-            `}
+            className={`absolute top-1 flex h-9 w-9 items-center justify-center rounded-full bg-[rgb(193,194,255)] text-[rgb(35,35,60)] transition-all duration-300 ${
+              checked ? "left-[48px]" : "left-1"
+            }`}
           >
             {thumbContent}
           </span>
         </button>
 
-        <span
-          className={`text-sm transition ${
-            checked ? "text-[var(--text)] font-semibold" : "text-[var(--text-muted)] opacity-70"
-          }`}
-        >
+        <span className={checked ? "text-sm font-semibold text-[var(--text)]" : "text-sm opacity-70"}>
           {rightText}
         </span>
       </div>
@@ -84,10 +64,9 @@ export default function PreferencesCard({ theme, setTheme }) {
           leftText="Latte"
           rightText="Mocha"
           thumbContent={
-            <img
-              src={coffeeIcon}
-              alt="Coffee"
-              className="h-5 w-5 object-contain"
+            <Coffee
+              size={16}
+              strokeWidth={2.2}
             />
           }
         />
@@ -99,7 +78,7 @@ export default function PreferencesCard({ theme, setTheme }) {
           leftText="EN"
           rightText="বো"
           thumbContent={
-            <span className="text-xs font-bold text-[rgb(35,35,60)]">
+            <span className="text-[11px] font-bold text-[rgb(35,35,60)]">
               {isBangla ? "বো" : "EN"}
             </span>
           }
