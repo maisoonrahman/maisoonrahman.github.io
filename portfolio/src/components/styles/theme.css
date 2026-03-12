@@ -1,0 +1,187 @@
+/* --------------------------------------------------
+   Default theme: Catppuccin Latte
+-------------------------------------------------- */
+
+:root {
+  color-scheme: light;
+
+  /* palette */
+  --ctp-rosewater: #dc8a78;
+  --ctp-flamingo: #dd7878;
+  --ctp-pink: #ea76cb;
+  --ctp-mauve: #8839ef;
+  --ctp-red: #d20f39;
+  --ctp-maroon: #e64553;
+  --ctp-peach: #fe640b;
+  --ctp-yellow: #df8e1d;
+  --ctp-green: #40a02b;
+  --ctp-teal: #179299;
+  --ctp-sky: #04a5e5;
+  --ctp-sapphire: #209fb5;
+  --ctp-blue: #1e66f5;
+  --ctp-lavender: #7287fd;
+
+  --ctp-text: #3f425c;
+  --ctp-subtext1: #4c4f69;
+  --ctp-subtext0: #5c5f77;
+
+  --ctp-overlay2: #6c6f85;
+  --ctp-overlay1: #7c7f93;
+  --ctp-overlay0: #8c8fa1;
+
+  --ctp-surface2: #acb0be;
+  --ctp-surface1: #bcc0cc;
+  --ctp-surface0: #ccd0da;
+
+  --ctp-base: #eff1f5;
+  --ctp-mantle: #e6e9ef;
+  --ctp-crust: #dce0e8;
+
+  /* semantic app tokens */
+
+  --bg-app: var(--ctp-base);
+  --bg-secondary: var(--ctp-mantle);
+
+  --text-main: var(--ctp-text);
+  --text-muted: var(--ctp-subtext1);
+  --text-soft: var(--ctp-subtext0);
+
+  --heading-accent: var(--ctp-mauve);
+
+  --border-default: var(--ctp-surface0);
+  --border-strong: var(--ctp-surface1);
+
+  /* card system */
+
+  --card-bg: var(--bg-app);
+  --card-border: var(--ctp-surface0);
+
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 14px 40px rgba(0, 0, 0, 0.12);
+
+  --card-divider: rgba(60, 64, 90, 0.12);
+
+  /* panels */
+
+  --panel-bg: #565a7d;
+  --panel-text: #f3f4f8;
+  --panel-muted: #d6d8df;
+
+  /* repo colors */
+
+  --repo-owner: var(--ctp-pink);
+  --repo-name: var(--ctp-green);
+
+  /* tags */
+
+  --tag-bg: #d8dde7;
+  --tag-border: #b5bcc8;
+  --tag-text: #4c4f69;
+  --tag-icon: var(--ctp-overlay1);
+
+  /* links */
+
+  --link-primary: var(--ctp-blue);
+  --link-secondary: var(--ctp-mauve);
+
+  /* window controls */
+
+  --window-red: var(--ctp-red);
+  --window-yellow: var(--ctp-yellow);
+  --window-green: var(--ctp-green);
+}
+
+
+/* --------------------------------------------------
+   Manual toggle: Catppuccin Mocha
+-------------------------------------------------- */
+
+html[data-theme="mocha"] {
+  color-scheme: dark;
+
+  /* palette */
+
+  --ctp-rosewater: #f5e0dc;
+  --ctp-flamingo: #f2cdcd;
+  --ctp-pink: #f5c2e7;
+  --ctp-mauve: #cba6f7;
+  --ctp-red: #f38ba8;
+  --ctp-maroon: #eba0ac;
+  --ctp-peach: #fab387;
+  --ctp-yellow: #f9e2af;
+  --ctp-green: #a6e3a1;
+  --ctp-teal: #94e2d5;
+  --ctp-sky: #89dceb;
+  --ctp-sapphire: #74c7ec;
+  --ctp-blue: #89b4fa;
+  --ctp-lavender: #b4befe;
+
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-subtext0: #a6adc8;
+
+  --ctp-overlay2: #9399b2;
+  --ctp-overlay1: #7f849c;
+  --ctp-overlay0: #6c7086;
+
+  --ctp-surface2: #585b70;
+  --ctp-surface1: #45475a;
+  --ctp-surface0: #313244;
+
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-crust: #11111b;
+
+  /* semantic app tokens */
+
+  --bg-app: var(--ctp-base);
+  --bg-secondary: var(--ctp-mantle);
+
+  --text-main: var(--ctp-text);
+  --text-muted: var(--ctp-subtext1);
+  --text-soft: var(--ctp-subtext0);
+
+  --heading-accent: var(--ctp-lavender);
+
+  --border-default: var(--ctp-surface0);
+  --border-strong: var(--ctp-surface1);
+
+  /* card system */
+
+  --card-bg: rgba(36, 39, 58, 0.75);
+  --card-border: rgba(205, 214, 244, 0.1);
+
+  --card-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --card-shadow-hover: 0 16px 44px rgba(0, 0, 0, 0.45);
+
+  --card-divider: rgba(205, 214, 244, 0.1);
+
+  /* panels */
+
+  --panel-bg: #313244;
+  --panel-text: #eef2ff;
+  --panel-muted: #a6adc8;
+
+  /* repo colors */
+
+  --repo-owner: var(--ctp-pink);
+  --repo-name: var(--ctp-green);
+
+  /* tags */
+
+  --tag-bg: #3b3f52;
+  --tag-border: #585b70;
+  --tag-text: #cdd6f4;
+  --tag-icon: var(--ctp-overlay2);
+
+  /* links */
+
+  --link-primary: var(--ctp-blue);
+  --link-secondary: var(--ctp-mauve);
+
+  /* window controls */
+
+  --window-red: var(--ctp-red);
+  --window-yellow: var(--ctp-yellow);
+  --window-green: var(--ctp-green);
+}
