@@ -16,7 +16,7 @@ export default function ConnectCard() {
         </p>
 
         <a
-          href="mailto:you@email.com"
+          href="mailto:maisoon.a.rahman@gmail.com"
           className="bg-pink-400 text-white px-4 py-2 rounded-xl w-fit"
         >
           Book a Chat

@@ -13,7 +13,10 @@ export default function BioSection() {
           I'm a developer and designer interested in building playful, thoughtful,
           and accessible digital experiences. I like creative front-end work,
           interactive storytelling, and projects that feel polished, personal,
-          and a little fun.
+          and a little fun. </p>
+
+          <p className="text-sm leading-7 text-[var(--text-muted)] sm:text-[15px]" >Currently looking for Summer 2026 opportunities while I prepare to begin my 
+          Masters in Computer Science at Stony Brook University (Fall 2026)
         </p>
 
         <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[var(--text-muted)]">

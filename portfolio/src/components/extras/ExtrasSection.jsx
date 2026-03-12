@@ -7,16 +7,16 @@ import ConnectCard from "./ConnectCard"
 
 export default function ExtrasSection({ theme, setTheme }) {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-12">
+    <section className="max-w-7xl mx-auto px-6 py-2">
 
-      <p className="text-lg font-semibold tracking-tight text-[var(--text-main)] leading-7 sm:text-3xl">
+      <h2 className="text-2xl font-semibold text-[var(--text-main)] sm:text-4x1">
           Extras
-        </p>
+        </h2>
 
       <div className="grid gap-6
         grid-cols-1
         md:grid-cols-2
-        xl:grid-cols-4
+        xl:grid-cols-4 py-4
       ">
 
         <LocationCard />

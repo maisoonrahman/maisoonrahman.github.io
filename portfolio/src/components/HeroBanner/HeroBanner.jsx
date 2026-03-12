@@ -26,26 +26,6 @@ export default function HeroBanner({ theme, setTheme }) {
           />
         </div>
 
-        {/* THEME SWITCH */}
-        <div className="absolute bottom-4 right-4 z-30 sm:bottom-5 sm:right-6">
-          <button
-            type="button"
-            role="switch"
-            aria-checked={isMocha}
-            aria-label="Toggle theme"
-            onClick={() => setTheme(isMocha ? "latte" : "mocha")}
-            className="relative inline-flex h-7 w-12 items-center rounded-full border border-[var(--border-default)] bg-[var(--bg-secondary)] transition-colors duration-300"
-          >
-            <span
-              className={`absolute left-1 h-5 w-5 rounded-full transition-transform duration-300 ${
-                isMocha
-                  ? "translate-x-5 bg-[var(--ctp-lavender)]"
-                  : "translate-x-0 bg-[var(--ctp-yellow)]"
-              }`}
-            />
-          </button>
-        </div>
-
       </div>
     </section>
   )

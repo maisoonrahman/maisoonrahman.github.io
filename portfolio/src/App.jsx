@@ -3,6 +3,7 @@ import HeroBanner from "./components/HeroBanner/HeroBanner"
 import BioSection from "./components/BioSection/BioSection"
 import Projects from "./components/Projects/Projects"
 import ExtrasSection from "./components/extras/ExtrasSection"
+import FooterBar from "./components/FooterBar"
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -23,6 +24,7 @@ export default function App() {
         <BioSection />
         <Projects />
         <ExtrasSection theme={theme} setTheme={setTheme} />
+        <FooterBar />
 
       </main>
     </div>
