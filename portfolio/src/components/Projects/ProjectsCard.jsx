@@ -11,7 +11,7 @@ export default function ProjectCard({
   return (
     <article className="flex h-[220px] flex-col overflow-hidden rounded-[16px] border border-[var(--card-border)] bg-[var(--card-bg)] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
 
-      <div className="flex h-[140px] flex-col bg-[var(--panel-bg)] p-3">
+      <div className="flex h-[143px] flex-col bg-[var(--panel-bg)] p-3">
 
         <div className="mb-2 flex items-center gap-1.5">
           <span className="h-2.5 w-2.5 rounded-full bg-[var(--window-red)]" />
