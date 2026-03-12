@@ -19,6 +19,8 @@ export default function BioSection() {
         <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[var(--text-muted)]">
           <a
             href="https://github.com/maisoonrahman"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 transition hover:text-[var(--text-main)]"
           >
             <Github className="h-4 w-4" />
@@ -27,6 +29,8 @@ export default function BioSection() {
 
           <a
             href="https://www.linkedin.com/in/maisoon-rahman/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 transition hover:text-[var(--text-main)]"
           >
             <Linkedin className="h-4 w-4" />
@@ -35,6 +39,8 @@ export default function BioSection() {
 
           <a
             href={resume}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 transition hover:text-[var(--text-main)]"
           >
             <FileText className="h-4 w-4" />
@@ -43,6 +49,8 @@ export default function BioSection() {
 
           <a
             href="mailto:maisoon.a.rahman@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 transition hover:text-[var(--text-main)]"
           >
             <Mail className="h-4 w-4" />

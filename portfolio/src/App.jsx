@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import HeroBanner from "./components/HeroBanner/HeroBanner"
 import BioSection from "./components/BioSection/BioSection"
 import Projects from "./components/Projects/Projects"
+import ExtrasSection from "./components/extras/ExtrasSection"
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -21,6 +22,8 @@ export default function App() {
 
         <BioSection />
         <Projects />
+        <ExtrasSection />
+
       </main>
     </div>
   )

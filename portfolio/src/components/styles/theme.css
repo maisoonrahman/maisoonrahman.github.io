@@ -38,39 +38,59 @@
   --ctp-crust: #dce0e8;
 
   /* semantic app tokens */
+
   --bg-app: var(--ctp-base);
   --bg-secondary: var(--ctp-mantle);
 
   --text-main: var(--ctp-text);
   --text-muted: var(--ctp-subtext1);
   --text-soft: var(--ctp-subtext0);
+
   --heading-accent: var(--ctp-mauve);
 
   --border-default: var(--ctp-surface0);
   --border-strong: var(--ctp-surface1);
 
-  --card-bg: var(--ctp-base);
+  /* card system */
+
+  --card-bg: var(--bg-app);
   --card-border: var(--ctp-surface0);
+
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 14px 40px rgba(0, 0, 0, 0.12);
+
+  --card-divider: rgba(60, 64, 90, 0.12);
+
+  /* panels */
 
   --panel-bg: #565a7d;
   --panel-text: #f3f4f8;
   --panel-muted: #d6d8df;
 
+  /* repo colors */
+
   --repo-owner: var(--ctp-pink);
   --repo-name: var(--ctp-green);
+
+  /* tags */
 
   --tag-bg: #d8dde7;
   --tag-border: #b5bcc8;
   --tag-text: #4c4f69;
   --tag-icon: var(--ctp-overlay1);
 
+  /* links */
+
   --link-primary: var(--ctp-blue);
   --link-secondary: var(--ctp-mauve);
+
+  /* window controls */
 
   --window-red: var(--ctp-red);
   --window-yellow: var(--ctp-yellow);
   --window-green: var(--ctp-green);
 }
+
 
 /* --------------------------------------------------
    Manual toggle: Catppuccin Mocha
@@ -80,6 +100,7 @@ html[data-theme="mocha"] {
   color-scheme: dark;
 
   /* palette */
+
   --ctp-rosewater: #f5e0dc;
   --ctp-flamingo: #f2cdcd;
   --ctp-pink: #f5c2e7;
@@ -112,34 +133,53 @@ html[data-theme="mocha"] {
   --ctp-crust: #11111b;
 
   /* semantic app tokens */
+
   --bg-app: var(--ctp-base);
   --bg-secondary: var(--ctp-mantle);
 
   --text-main: var(--ctp-text);
   --text-muted: var(--ctp-subtext1);
   --text-soft: var(--ctp-subtext0);
+
   --heading-accent: var(--ctp-lavender);
 
   --border-default: var(--ctp-surface0);
   --border-strong: var(--ctp-surface1);
 
-  --card-bg: #24273a;
-  --card-border: var(--ctp-surface0);
+  /* card system */
+
+  --card-bg: rgba(36, 39, 58, 0.75);
+  --card-border: rgba(205, 214, 244, 0.1);
+
+  --card-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --card-shadow-hover: 0 16px 44px rgba(0, 0, 0, 0.45);
+
+  --card-divider: rgba(205, 214, 244, 0.1);
+
+  /* panels */
 
   --panel-bg: #313244;
   --panel-text: #eef2ff;
   --panel-muted: #a6adc8;
 
+  /* repo colors */
+
   --repo-owner: var(--ctp-pink);
   --repo-name: var(--ctp-green);
+
+  /* tags */
 
   --tag-bg: #3b3f52;
   --tag-border: #585b70;
   --tag-text: #cdd6f4;
   --tag-icon: var(--ctp-overlay2);
 
+  /* links */
+
   --link-primary: var(--ctp-blue);
   --link-secondary: var(--ctp-mauve);
+
+  /* window controls */
 
   --window-red: var(--ctp-red);
   --window-yellow: var(--ctp-yellow);
