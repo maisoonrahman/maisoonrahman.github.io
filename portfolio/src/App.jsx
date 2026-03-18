@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import HeroBanner from "./components/HeroBanner/HeroBanner"
-import BioSection from "./pages/Home/BioSection/BioSection"
-import Projects from "./pages/Home/ProjectsSection/Projects"
-import ExtrasSection from "./pages/Home/extras/ExtrasSection"
-import FooterBar from "./components/FooterBar"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import HomePage from "./pages/Home/HomePage"
+import ProjectsPage from "./pages/ProjectsPage"
+import Layout from "./components/Layout/Layout"
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -16,17 +16,27 @@ export default function App() {
   }, [theme])
 
   return (
-    <div className="min-h-screen bg-[var(--bg-app)] text-[var(--text-main)]">
-      <HeroBanner />
-
-      <main className="mx-auto w-full max-w-6xl px-6 py-8">
-
-        <BioSection />
-        <Projects />
-        <ExtrasSection theme={theme} setTheme={setTheme} />
-        <FooterBar />
-
-      </main>
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-[var(--bg-app)] text-[var(--text-main)]">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout>
+              <HomePage theme={theme} setTheme={setTheme} />
+              </Layout>
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <Layout>
+              <ProjectsPage theme={theme} setTheme={setTheme} />
+              </Layout>
+            }
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   )
 }
