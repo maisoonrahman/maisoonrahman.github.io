@@ -1,5 +1,5 @@
-import albumArt from "../../assets/BTSalbumcover.jpg";
-import BaseCard from "./BaseCard";
+import albumArt from "../../../assets/BTSalbumcover.jpg";
+import BaseCard from "../../../components/BaseCard"
 import { Music } from "lucide-react";
 
 export default function SpotifyCard() {

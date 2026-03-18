@@ -1,6 +1,6 @@
-import currentRead from "../../data/currentRead";
+import currentRead from "../../../data/currentRead";
 import { Book } from "lucide-react";
-import BaseCard from "./BaseCard";
+import BaseCard from "../../../components/BaseCard"
 
 export default function ManhwaCard() {
   return (

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Palette } from "lucide-react"
 import { Coffee } from "lucide-react"
-import BaseCard from "./BaseCard"
+import BaseCard from "../../../components/BaseCard"
 
 function PreferenceToggle({
   label,

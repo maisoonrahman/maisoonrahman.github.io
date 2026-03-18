@@ -1,4 +1,4 @@
-import BaseCard from "./BaseCard"
+import BaseCard from "../../../components/BaseCard"
 import { Github } from "lucide-react"
 
 export default function GithubCard() {

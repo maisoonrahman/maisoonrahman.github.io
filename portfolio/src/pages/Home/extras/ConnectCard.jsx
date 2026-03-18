@@ -1,4 +1,4 @@
-import BaseCard from "./BaseCard"
+import BaseCard from "../../../components/BaseCard"
 import { Mail } from "lucide-react"
 
 export default function ConnectCard() {

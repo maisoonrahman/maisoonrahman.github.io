@@ -1,4 +1,4 @@
-import BaseCard from "./BaseCard"
+import BaseCard from "../../../components/BaseCard"
 import { MapPin, Sun, Clock } from "lucide-react"
 
 export default function LocationCard() {
