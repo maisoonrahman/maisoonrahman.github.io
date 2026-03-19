@@ -3,33 +3,27 @@ import BaseCard from "../../components/UI/BaseCard"
 import { Music } from "lucide-react";
 
 export default function SpotifyCard() {
-  const song = {
-    title: "Blood Sweat & Tears",
-    artist: "BTS",
-    albumArt: albumArt,
-  }
 
   return (
     <BaseCard 
     title="Now Playing.."
     icon={<Music size={18} />}
-    className="min-h-[260px]" >
+    className="min-h-[260px]" 
+    contentClassName="flex flex-col gap-4" >
 
-      <div className="flex flex-col items-center gap-2">
+      <iframe 
+      data-testid="embed-iframe" 
+      style={{  borderRadius: "12px" }}
+      src="https://open.spotify.com/embed/playlist/6IKBYVLs7z0kD6N6gbSB1h?utm_source=generator" 
+      width="100%" height="152" frameBorder="0" 
+      allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+      loading="lazy"></iframe>
 
-        <img src={albumArt} className="w-35 h-35 rounded-xl object-cover" />
-
-        <div className="text-center">
-          <div className="font-bold text-sm">
-            Blood Sweat & Tears
-          </div>
-
-          <div className="text-sm opacity-70">
-            BTS
-          </div>
-        </div>
-
-      </div>
+      <div className="flex items-center justify-between text-sm">
+        <span className="text-sm text-[var(--text)]">
+          Maisoon.exe  | Spotify
+        </span> </div>
 
     </BaseCard>
   );

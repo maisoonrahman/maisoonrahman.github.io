@@ -28,7 +28,7 @@ export default function LocationCard() {
 
         <div className="flex items-center justify-between text-sm">
 
-          <span className="text-sm text-[var(--text)]">
+          <span className="text-sm gap-2 text-[var(--text)]">
             New York, NY
           </span>
 
