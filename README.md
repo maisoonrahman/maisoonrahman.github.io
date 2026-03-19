@@ -1,7 +1,7 @@
 # ✨ Maisoon's Portfolio
 
 <p align="center">
-  <a href="https://maisoonrahman.github.io" target="_blank">
+  <a href="https://maisoonrahman.github.io" target="_blank" rel="noopener noreferrer">
     <img src="portfolio/src/assets/website-preview.png" alt="Portfolio Preview" width="800"/>
   </a>
 </p>
