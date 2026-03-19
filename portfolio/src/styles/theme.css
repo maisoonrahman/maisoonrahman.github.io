@@ -89,6 +89,19 @@
   --window-red: var(--ctp-red);
   --window-yellow: var(--ctp-yellow);
   --window-green: var(--ctp-green);
+
+  /* navbar colors */
+
+  --navbar-bg: rgba(83, 82, 82, 0.575);
+  --navbar-text: #ffffff;
+  --navbar-border: rgba(53, 53, 53, 0.15);
+
+  /* footer colors */
+
+  --footer-bg: rgb(214, 216, 223);
+  --footer-text: #4d4f69;
+  --footer-border: rgb(205, 208, 218);
+
 }
 
 
@@ -184,4 +197,16 @@ html[data-theme="mocha"] {
   --window-red: var(--ctp-red);
   --window-yellow: var(--ctp-yellow);
   --window-green: var(--ctp-green);
+
+  /* navbar colors */
+
+  --navbar-bg: rgba(255, 255, 255, 0.15);
+  --navbar-text: #ffffff;
+  --navbar-border: rgba(255, 255, 255, 0.2);
+
+  /* footer colors */
+
+  --footer-bg: rgb(36, 37, 56);
+  --footer-text: #bcc2df;
+  --footer-border: rgb(53, 55, 75);
 }

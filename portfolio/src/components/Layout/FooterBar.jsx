@@ -34,12 +34,12 @@ export default function FooterBar() {
         className="
           flex items-center justify-center
           rounded-[20px]
-          bg-[var(--panel-muted)]
-          border border-[var(--card-border)]
+          bg-[var(--footer-bg)]
+          border-[var(--footer-border)]
           shadow-[var(--card-shadow)]
           px-5 py-4
           text-sm font-mono
-          text-[var(--text-muted)]
+          text-[var(--footer-text)]
         "
       >
         <div className="flex items-center justify-center gap-15">

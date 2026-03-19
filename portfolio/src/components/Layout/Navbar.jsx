@@ -20,11 +20,9 @@ export default function Navbar() {
           border
           shadow-lg
           
-          /* LATTE (light mode) */
-          bg-black/70 text-white border-black/20
-          
-          /* MOCHA (dark mode) */
-          dark:bg-white/25 dark:text-white dark:border-white/20
+          bg-[var(--navbar-bg)]
+          text-[var(--navbar-text)]
+          border-[var(--navbar-border)]
         "
       >
         {navItems.map((item) =>
