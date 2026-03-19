@@ -37,8 +37,16 @@ The site is designed as an interactive experience, blending **minimalist design 
 - 🧩 Modular card-based UI system
 - 🌗 Light/Dark theme toggle (Catppuccin-inspired)
 - 🎵 Embedded Spotify playlist
-- 📱 Fully responsive layout
 - ⚡ Deployed via GitHub Pages
+
+---
+
+## 🎨 Coming Soon
+
+- 📱 Fully responsive layout
+- 🌐 Language Toggle
+- 💻 Detailed Projects Cards
+- 🖼️ Fixed white spacing and layout
 
 ---
 
