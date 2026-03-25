@@ -32,23 +32,6 @@ export default function ProjectsPage() {
             communications. Explore projects by category to see how I build,
             design, and present ideas.
           </p>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {projectCategories.map((category) => (
-              <div
-                key={category.id}
-                className="rounded-[24px] border border-[var(--card-border)] bg-[var(--card-bg)] p-5 shadow-[var(--card-shadow)]"
-              >
-                <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--heading-accent)]">
-                  {category.label}
-                </h2>
-
-                <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
-                  {category.shortDescription}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
