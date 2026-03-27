@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import BioSection from "./BioSection/BioSection"
-import Projects from "./ProjectsPreview/ProjectsPreview"
+import BioSection from "./BioSection"
+import Projects from "./ProjectsPreview"
 import ExtrasSection from "./ExtrasSection"
 
 export default function App() {

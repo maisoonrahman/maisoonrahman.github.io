@@ -1,114 +1,264 @@
-export const projectCategories = [
-  {
-    id: "coding",
-    label: "Coding Projects",
-    shortDescription:
-      "Fully built websites, web apps, and interactive development projects.",
-  },
-  {
-    id: "design",
-    label: "UI/UX Design",
-    shortDescription:
-      "Asset creation, prototyping, interface design, and visual development work.",
-  },
-  {
-    id: "marketing",
-    label: "Marketing Projects",
-    shortDescription:
-      "Branding, communications, event promotion, and creative outreach work.",
-  },
-]
+import portfolioImg from "../assets/projects-images/personal-portfolio-preview.png";
+import webtoonImg from "../assets/projects-images/webtoon-redesign.png";
+import napquestImg from "../assets/projects-images/nap-quest.png";
+import finalprojImg from "../assets/projects-images/biological.png";
+import hackcwruImg from "../assets/projects-images/hackcwru.png";
 
 export const projectsData = [
+  // =========================
+  // DESIGN + CODING
+  // =========================
+
   {
-    id: 1,
-    category: "coding",
-    owner: "maisoonrahman",
-    name: "portfolio-website",
-    title: "Maisoon's Portfolio",
-    description:
-      "A responsive personal portfolio website designed and developed to showcase creative and technical work through a polished, theme-driven interface.",
-    tags: ["react", "vite", "javascript", "tailwind", "frontend"],
-    github: "https://github.com/yourusername/yourrepo",
-    demo: "https://yourwebsite.com",
+    slug: "personal-portfolio",
     featured: true,
+    categories: ["coding", "design"],
+    tags: ["React", "UI/UX", "Frontend", "Animation", "Tailwind"],
+    title: "Personal Portfolio",
+    cardDescription:
+      "A storytelling-focused portfolio blending motion, UI design, and frontend engineering.",
+    thumbnail: portfolioImg,
+
+    page: {
+      overview:
+        "A visually-driven portfolio designed to feel like a curated experience rather than a static website.",
+      meta: {
+        role: "UI/UX Designer + Frontend Developer",
+        tools: ["React", "Vite", "Tailwind", "Framer Motion"],
+      },
+      sections: [
+        {
+          type: "text",
+          title: "Concept",
+          content:
+            "Designed as a storytelling experience rather than a static portfolio.",
+        },
+        {
+          type: "list",
+          title: "Key Features",
+          items: [
+            "Reusable component system",
+            "Theme switching",
+            "Responsive layout",
+            "CI/CD deployment",
+          ],
+        },
+      ],
+    },
   },
+
   {
-    id: 2,
-    category: "coding",
-    owner: "maisoonrahman",
-    name: "paw-modoro-timer",
-    title: "Paw-Modoro Timer",
-    description:
-      "A gamified productivity app concept with playful interaction design, timer logic, and a cat-centered visual experience.",
-    tags: ["react", "javascript", "ui-logic", "gamified-design"],
-    github: "https://github.com/yourusername/pawmodoro",
-    demo: "",
+    slug: "nap-quest",
     featured: true,
+    categories: ["coding", "design"],
+    tags: ["Unity", "Game Dev", "UI Design", "C#", "Procreate"],
+    title: "Nap Quest",
+    cardDescription:
+      "A playful Unity game inspired by early 2000s casual games.",
+    thumbnail: napquestImg,
+
+    page: {
+      overview:
+        "A casual Unity game focused on nostalgic UI design and player experience.",
+      meta: {
+        role: "Game UI Designer + Developer",
+        tools: ["Unity", "C#", "Procreate"],
+      },
+      sections: [
+        {
+          type: "list",
+          title: "Contributions",
+          items: [
+            "Designed all UI and assets",
+            "Built gameplay logic",
+            "Refined via playtesting",
+          ],
+        },
+      ],
+    },
   },
+
+  // =========================
+  // DESIGN PROJECTS
+  // =========================
+
   {
-    id: 3,
-    category: "design",
-    owner: "maisoonrahman",
-    name: "nap-quest-ui",
-    title: "Nap Quest UI",
-    description:
-      "UI and asset design for a short, playful game inspired by nostalgic Flash-era visuals, including hand-crafted graphics and interface concepts.",
-    tags: ["ui-design", "game-art", "asset-creation", "procreate"],
-    github: "",
-    demo: "",
+    slug: "pawmodoro-timer",
+    categories: ["design"],
+    tags: ["UI/UX", "Figma", "Prototyping", "Interaction Design"],
+    title: "Pawmodoro Timer",
+    cardDescription:
+      "A gamified Pomodoro app featuring a pixel cat that reflects time progression.",
+    thumbnail: "/images/pawmodoro-card.png",
+
+    page: {
+      overview:
+        "A productivity app prototype exploring emotional engagement through animation.",
+      meta: {
+        role: "UI/UX Designer",
+        tools: ["Figma"],
+      },
+      sections: [
+        {
+          type: "text",
+          title: "Concept",
+          content:
+            "A pixel cat visually represents timer progression to make productivity engaging.",
+        },
+      ],
+    },
+  },
+
+  {
+    slug: "webtoon-redesign",
     featured: true,
+    categories: ["design"],
+    tags: ["UX Case Study", "UI/UX", "Figma", "User Research"],
+    title: "Webtoon Homepage Redesign",
+    cardDescription:
+      "A user-centered redesign improving navigation and reducing clutter.",
+    thumbnail: webtoonImg,
+
+    page: {
+      overview:
+        "A UX case study improving homepage hierarchy and usability.",
+      meta: {
+        role: "UX/UI Designer",
+        tools: ["Figma", "User Research"],
+      },
+      sections: [
+        {
+          type: "text",
+          title: "Problem",
+          content:
+            "Homepage felt cluttered and difficult to navigate.",
+        },
+        {
+          type: "before-after",
+          title: "Before vs After",
+          before: ["Cluttered layout", "Poor hierarchy"],
+          after: ["Clear structure", "Improved usability"],
+        },
+      ],
+    },
   },
+
+  // =========================
+  // CODING PROJECTS
+  // =========================
+
   {
-    id: 4,
-    category: "design",
-    owner: "maisoonrahman",
-    name: "webtoon-app-redesign",
-    title: "Webtoon App Redesign",
-    description:
-      "A redesign concept focused on reducing clutter, improving browsing flow, and creating a cleaner reading and discovery experience.",
-    tags: ["figma", "wireframing", "ux", "prototype"],
-    github: "",
-    demo: "",
-    featured: true,
+    slug: "melody-mapper",
+    categories: ["coding"],
+    tags: ["Python", "NLP", "Data Visualization", "Spotify API"],
+    title: "Melody Mapper",
+    cardDescription:
+      "An NLP project analyzing song lyrics and visualizing themes.",
+    thumbnail: "/images/melody-card.png",
+
+    page: {
+      overview:
+        "A data-driven NLP project translating lyrics into visual insights.",
+      meta: {
+        role: "Developer",
+        tools: ["Python", "NLP"],
+      },
+      sections: [
+        {
+          type: "list",
+          title: "Features",
+          items: [
+            "Lyric analysis",
+            "Theme classification",
+            "Visualization outputs",
+          ],
+        },
+      ],
+    },
   },
+
   {
-    id: 5,
-    category: "marketing",
-    owner: "maisoonrahman",
-    name: "systers-bangladesh",
-    title: "Systers Bangladesh",
-    description:
-      "Creative and outreach work supporting community-driven tech initiatives through promotional design and communications.",
-    tags: ["marketing", "branding", "community", "design"],
-    github: "",
-    demo: "",
-    featured: true,
+    slug: "biological-clock",
+    categories: ["coding"],
+    tags: ["Python", "Data Science", "Kalman Filter"],
+    title: "Biological Clock Ensemble",
+    cardDescription:
+      "A biometric modeling project using Kalman Filtering.",
+    thumbnail: finalprojImg,
+
+    page: {
+      overview:
+        "Modeled circadian rhythms using probabilistic filtering techniques.",
+      meta: {
+        role: "Developer",
+        tools: ["Python"],
+      },
+      sections: [
+        {
+          type: "text",
+          title: "Implementation",
+          content:
+            "Built data pipelines and applied Kalman Filtering.",
+        },
+      ],
+    },
   },
+
+  // =========================
+  // PR / DESIGN WORK
+  // =========================
+
   {
-    id: 6,
-    category: "marketing",
-    owner: "maisoonrahman",
-    name: "hackcwru-promotion",
-    title: "HackCWRU",
-    description:
-      "Promotional and visual support work for hackathon-related outreach, event visibility, and student engagement.",
-    tags: ["event-marketing", "promotion", "graphics"],
-    github: "",
-    demo: "",
-    featured: false,
+    slug: "lux-yearbook-branding",
+    categories: ["pr", "design"],
+    tags: ["Branding", "PR", "Layout Design", "Canva"],
+    title: "LUX Yearbook Branding & PR",
+    cardDescription:
+      "Led branding and marketing for a university yearbook.",
+    thumbnail: "/images/lux-card.png",
+
+    page: {
+      overview:
+        "Developed cohesive branding across print and digital platforms.",
+      meta: {
+        role: "Director of PR",
+        tools: ["Canva"],
+      },
+      sections: [
+        {
+          type: "text",
+          title: "Impact",
+          content:
+            "Increased engagement and visibility by 200%.",
+        },
+      ],
+    },
   },
+
   {
-    id: 7,
-    category: "marketing",
-    owner: "maisoonrahman",
-    name: "lux-yearbook-pr",
-    title: "LUX Yearbook",
-    description:
-      "PR, flyer design, and communication work completed as part of yearbook club leadership and promotional efforts.",
-    tags: ["pr", "flyer-design", "communications"],
-    github: "",
-    demo: "",
-    featured: true,
+    slug: "hackcwru-marketing",
+    categories: ["pr", "design"],
+    tags: ["Marketing", "Campaign Design", "Social Media"],
+    title: "HackCWRU Marketing Campaigns",
+    cardDescription:
+      "Marketing campaigns that increased hackathon participation.",
+    thumbnail: hackcwruImg,
+
+    page: {
+      overview:
+        "Campaign-driven design project focused on engagement.",
+      meta: {
+        role: "Director of PR",
+        tools: ["Canva"],
+      },
+      sections: [
+        {
+          type: "text",
+          title: "Outcome",
+          content:
+            "Increased participation by 300%.",
+        },
+      ],
+    },
   },
 ]
