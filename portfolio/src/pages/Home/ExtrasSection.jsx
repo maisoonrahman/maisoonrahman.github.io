@@ -9,23 +9,14 @@ export default function ExtrasSection({ theme, setTheme }) {
   return (
     <section className="max-w-7xl mx-auto px-6 py-2">
 
-      <h2 className="text-2xl font-semibold text-[var(--text-main)] sm:text-4x1">
+      <h1 className="text-lg font-semibold tracking-tight text-[var(--text-main)] leading-7 sm:text-3xl">
           Extras
-        </h2>
+        </h1>
 
-      <div className="grid gap-6
-        grid-cols-1
-        md:grid-cols-2
-        xl:grid-cols-4 py-4
-      ">
+      <div className="py-8">
 
-        <LocationCard />
         <SpotifyCard />
-        <ManhwaCard />
-        <PreferencesCard theme={theme} setTheme={setTheme} />
-
-        <GithubCard />
-        <ConnectCard />
+        
 
       </div>
 

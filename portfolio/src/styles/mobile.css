@@ -101,7 +101,7 @@
   .memory-reel {
     min-height: auto !important;
     height: auto !important;
-    overflow: hidden;
+    overflow: auto;
   }
 
   .hero img,
@@ -264,7 +264,7 @@
 }
 
 /* =========================
-   MOBILE NAV (DO NOT WRAP IN MEDIA QUERY)
+   MOBILE NAV
    ========================= */
 
 .mobile-menu-button {
@@ -272,18 +272,29 @@
   width: 58px;
   height: 58px;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--navbar-border);
+  background: var(--navbar-bg);
+  color: var(--navbar-text);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  box-shadow: var(--card-shadow);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.mobile-menu-button:hover {
+  transform: scale(1.03);
+}
+
+.mobile-menu-button:active {
+  transform: scale(0.97);
 }
 
 .mobile-menu-line {
@@ -292,7 +303,11 @@
   height: 2.5px;
   border-radius: 999px;
   background: var(--navbar-text);
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    top 0.3s ease,
+    opacity 0.25s ease,
+    background 0.25s ease;
 }
 
 .mobile-menu-line.line-1 {
@@ -313,11 +328,10 @@
   transform: rotate(-45deg);
 }
 
-/* backdrop */
 .mobile-menu-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(8, 8, 12, 0.28);
+  background: rgba(0, 0, 0, 0.28);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -329,7 +343,6 @@
   pointer-events: auto;
 }
 
-/* sliding panel */
 .mobile-menu-panel {
   position: fixed;
   top: 0;
@@ -349,13 +362,37 @@
 .mobile-menu-inner {
   height: 100%;
   border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--navbar-border);
+  background: var(--navbar-bg);
+  color: var(--navbar-text);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: var(--card-shadow);
   padding: 22px 18px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.mobile-menu-header {
+  padding: 6px 4px 10px;
+  border-bottom: 1px solid var(--navbar-border);
+}
+
+.mobile-menu-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navbar-text);
+  opacity: 0.8;
+}
+
+.mobile-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 6px;
 }
 
 .mobile-menu-link {
@@ -365,13 +402,34 @@
   color: var(--navbar-text);
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.2s ease;
+  background: color-mix(in srgb, var(--navbar-bg) 82%, transparent);
+  border: 1px solid var(--navbar-border);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .mobile-menu-link:hover {
   transform: translateX(-2px);
+  opacity: 0.9;
 }
 
+/* visibility */
+@media (max-width: 768px) {
+  .desktop-navbar {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-button-wrap,
+  .mobile-menu-backdrop,
+  .mobile-menu-panel {
+    display: none !important;
+  }
+}
 /* show/hide based on screen */
 
 @media (max-width: 768px) {
@@ -385,5 +443,52 @@
   .mobile-menu-backdrop,
   .mobile-menu-panel {
     display: none !important;
+  }
+}
+
+/* =========================
+   PROJECT DETAILS PAGE
+   ========================= */
+
+@media (max-width: 768px) {
+  .project-page-nav {
+    display: none !important;
+  }
+
+  .project-detail-page {
+    padding: 5.8rem 16px 24px;
+  }
+
+  .project-detail-shell {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-detail-main {
+    padding: 18px;
+    border-radius: 24px;
+  }
+
+  .project-detail-image {
+    height: 230px;
+  }
+
+  .project-detail-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .project-detail-before-after {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-detail-main {
+    padding: 16px;
+  }
+
+  .project-detail-image {
+    height: 190px;
   }
 }

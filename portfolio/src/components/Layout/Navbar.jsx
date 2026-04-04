@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop navbar */}
-      <nav className="desktop-navbar fixed inset-x-0 top-4 z-50 hidden md:flex justify-center px-6 sm:px-8">
+      <nav className="desktop-navbar fixed inset-x-0 top-4 z-50 hidden md:flex justify-end px-6 sm:px-8">
         <div
           className="
             flex items-center gap-8
