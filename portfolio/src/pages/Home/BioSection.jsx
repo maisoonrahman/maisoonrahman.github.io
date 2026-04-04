@@ -1,5 +1,5 @@
 import { Github, Linkedin, FileText, Mail } from "lucide-react"
-import resume from "../../../assets/documents/MaisoonRahman_InternPT_SoftwareData.pdf";
+import resume from "../../assets/documents/MaisoonRahman_InternPT_SoftwareData.pdf";
 
 export default function BioSection() {
   return (

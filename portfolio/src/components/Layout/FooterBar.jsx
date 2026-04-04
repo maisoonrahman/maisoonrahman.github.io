@@ -1,72 +1,79 @@
-import { useEffect, useState } from "react"
-import { Github, Linkedin, File } from "lucide-react"
-import resume from "../../assets/documents/MaisoonRahman_InternPT_SoftwareData.pdf";
-
-function LiveTime() {
-  const [time, setTime] = useState("")
-
-  useEffect(() => {
-    const formatTime = () => {
-      const now = new Date()
-      return now.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-      })
-    }
-
-    setTime(formatTime())
-
-    const interval = setInterval(() => {
-      setTime(formatTime())
-    }, 1000)
-
-    return () => clearInterval(interval)
-  }, [])
-
-  return <span className="text-pink-400">◷ {time}</span>
-}
+import { Github, Linkedin, Mail, File } from "lucide-react"
+import resume from "../../assets/documents/MaisoonRahman_InternPT_SoftwareData.pdf"
 
 export default function FooterBar() {
   return (
-    <footer className="w-full px-6 pb-6 mt-12">
-      <div
-        className="
-          flex items-center justify-center
-          rounded-[20px]
-          bg-[var(--footer-bg)]
-          border-[var(--footer-border)]
-          shadow-[var(--card-shadow)]
-          px-5 py-4
-          text-sm font-mono
-          text-[var(--footer-text)]
-        "
-      >
-        <div className="flex items-center justify-center gap-15">
-          <span>© 2026 Maisoon Rahman</span>
+    <footer className="w-full mt-20 border-t border-white/10 bg-[#0d0d0d] text-[var(--footer-text)]">
+      <div className="mx-auto max-w-7xl px-6 py-14 md:px-10 lg:px-16">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+          {/* Left */}
+          <div className="space-y-5">
+            <p className="max-w-md font-serif text-3xl italic leading-tight text-white md:text-5xl">
+              “Design is where science and art break even.”
+            </p>
 
-          <span className="opacity-50">-</span>
+            <p className="font-mono text-sm uppercase tracking-[0.2em] text-[var(--footer-text)]/70">
+              Made with coffee, &lt;3, and more coffee
+            </p>
 
-          <span className="flex items-center gap-2">
-            <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
-            All Systems Nominal
-          </span>
+            <p className="font-mono text-sm uppercase tracking-[0.2em] text-[var(--footer-text)]/70">
+              Follow along to see how I evolve...
+            </p>
+          </div>
 
-          <span className="opacity-50">-</span>
+          {/* Middle */}
+          <div className="space-y-4">
 
-          <LiveTime />
+            <ul className="space-y-3 font-mono text-lg text-right">
+              <li>
+                <a
+                  href="https://linkedin.com/in/maisoon-rahman"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 text-[var(--footer-text)] transition hover:text-orange-400"
+                >
+                  <Linkedin size={18} />
+                  LinkedIn
+                </a>
+              </li>
 
-          <span className="opacity-50">-</span>
+              <li>
+                <a
+                  href="https://github.com/maisoonrahman"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 text-[var(--footer-text)] transition hover:text-orange-400"
+                >
+                  <Github size={18} />
+                  GitHub
+                </a>
+              </li>
 
-          <a href="https://github.com/maisoonrahman" target="_blank" rel="noreferrer">
-            <Github size={18} />
-          </a>
-          <a href="https://linkedin.com/in/maisoon-rahman" target="_blank" rel="noreferrer">
-            <Linkedin size={18} />
-          </a>
-          <a href={resume} target="_blank" rel="noreferrer">
-            <File size={18} />
-          </a>
+              <li>
+                <a
+                  href="mailto:maisoon.a.rahman@gmail.com"
+                  className="inline-flex items-center gap-3 text-[var(--footer-text)] transition hover:text-orange-400"
+                >
+                  <Mail size={18} />
+                  Email
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href={resume}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 text-[var(--footer-text)] transition hover:text-orange-400"
+                >
+                  <File size={18} />
+                  Resume
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          
         </div>
       </div>
     </footer>
