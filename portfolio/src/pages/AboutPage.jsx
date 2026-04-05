@@ -5,9 +5,9 @@ import DigiCam from "../components/UI/DigiCam"
 // polaroid
 import polaroid1 from "../assets/polaroid-shuffle/img1.jpg"
 import polaroid2 from "../assets/polaroid-shuffle/img2.jpeg"
-import polaroid3 from "../assets/polaroid-shuffle/img3.jpg"
-import polaroid4 from "../assets/polaroid-shuffle/img4.jpg"
-import polaroid5 from "../assets/polaroid-shuffle/img5.jpg"
+import polaroid3 from "../assets/polaroid-shuffle/img3.JPG"
+import polaroid4 from "../assets/polaroid-shuffle/img4.JPG"
+import polaroid5 from "../assets/polaroid-shuffle/img5.JPG"
 import polaroid6 from "../assets/polaroid-shuffle/img6.jpeg"
 
 // digicam
