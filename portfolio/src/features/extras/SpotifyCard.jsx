@@ -1,4 +1,4 @@
-import albumArt from "../../assets/BTSalbumcover.jpg";
+
 import BaseCard from "../../components/UI/BaseCard"
 import { Music } from "lucide-react";
 

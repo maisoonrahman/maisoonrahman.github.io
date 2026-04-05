@@ -5,6 +5,7 @@ import HomePage from "./pages/Home/HomePage"
 import ProjectsPage from "./pages/ProjectsPage"
 import Layout from "./components/Layout/Layout"
 import ProjectDetailPage from "./pages/ProjectsDetail"
+import AboutPage from "./pages/AboutPage"
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -49,6 +50,16 @@ export default function App() {
             </Layout>
           }
         />
+
+        <Route
+            path="/about"
+            element={
+              <Layout>
+                <AboutPage theme={theme} setTheme={setTheme} />
+              </Layout>
+            }
+          />
+
         </Routes>
       </div>
     </BrowserRouter>
