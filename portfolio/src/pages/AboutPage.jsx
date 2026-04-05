@@ -71,21 +71,6 @@ const cameraRollImages = [
   },
 ]
 
-const experience = [
-  {
-    title: "Frontend + UI",
-    text: "I build interfaces that focus on interaction, clarity, and visual feel rather than just functionality.",
-  },
-  {
-    title: "Design Thinking",
-    text: "I care about how things feel to use. Not just if they work, but if they make sense and feel natural.",
-  },
-  {
-    title: "Creative Development",
-    text: "Most of my work sits between code and art—interactive, slightly experimental, and narrative-driven.",
-  },
-]
-
 // --- PAGE ---
 
 export default function AboutPage() {
@@ -108,20 +93,15 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-[15px] leading-7 text-[var(--text-muted)]">
-              I started in computer science, but the parts I kept coming back to
-              were always the visual and interactive ones—how something feels to
-              use, how it looks, and how people move through it.
+              I design and build digital experiences that feel intuitive, thoughtful, and a little personal.
             </p>
 
             <p className="text-[15px] leading-7 text-[var(--text-muted)]">
-              A lot of my work sits between development and design. I like
-              building things that are functional, but also have personality,
-              intention, and a sense of narrative.
+              My work sits between frontend engineering and UI/UX. I use tools like React, TypeScript, and Figma to take ideas from concept to polished, interactive products. I care about how things feel to use just as much as how they work.
             </p>
 
             <p className="text-[15px] leading-7 text-[var(--text-muted)]">
-              Right now I’m focused on frontend development, UX engineering, and
-              creating experiences that feel a little more human and less rigid.
+              I’m especially interested in roles where I can bridge design and engineering, whether that’s frontend development, UX engineering, or product-focused work.
             </p>
           </div>
         </section>
@@ -132,20 +112,49 @@ export default function AboutPage() {
             Experience
           </h2>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {experience.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-[1.5rem] border border-[var(--border-soft)] bg-[var(--bg-card)] p-6"
-              >
-                <h3 className="mb-3 text-lg font-semibold">
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-7 text-[var(--text-muted)]">
-                  {item.text}
-                </p>
-              </div>
-            ))}
+          <div className="mt-8 space-y-6 text-[15px]">
+            
+            <div className="flex items-center justify-between border-b border-[var(--border-soft)] pb-3">
+              <span>Federal Reserve Bank of Cleveland / Frontend Developer Intern</span>
+              <span className="text-[var(--text-muted)]">Aug 2024 - Nov 2024</span>
+            </div>
+
+            <div className="flex items-center justify-between border-b border-[var(--border-soft)] pb-3">
+              <span>Noya Ventures / Software Engineer (Contract)</span>
+              <span className="text-[var(--text-muted)]">Oct 2025 - April 2026</span>
+            </div>
+
+            <div className="flex items-center justify-between border-b border-[var(--border-soft)] pb-3">
+              <span>Millennium Information Solution Ltd. / Frontend Developer Intern</span>
+              <span className="text-[var(--text-muted)]">Jul 2025 - Oct 2025</span>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <span>SPiDLab (CWRU) / Backend Developer</span>
+              <span className="text-[var(--text-muted)]">May 2023 – May 2024</span>
+            </div>
+
+          </div>
+        </section>
+
+        {/* --- EDUCATION --- */}
+        <section className="mt-20">
+          <h2 className="font-serif text-3xl md:text-4xl">
+            Education
+          </h2>
+
+          <div className="mt-8 space-y-6 text-[15px]">
+            
+            <div className="flex items-center justify-between border-b border-[var(--border-soft)] pb-3">
+              <span>Stony Brook University / M.S. Computer Science</span>
+              <span className="text-[var(--text-muted)]">Sept 2026 – May 2028</span>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <span>Case Western Reserve University / B.S. Computer Science, Math & Art</span>
+              <span className="text-[var(--text-muted)]">Aug 2021 – May 2025</span>
+            </div>
+
           </div>
         </section>
 

@@ -5,61 +5,67 @@ export default function BioSection() {
   return (
     <section id="about" className="px-6 py-2">
       <div className="space-y-4 max-w-3xl">
-        <p className="text-lg font-semibold tracking-tight text-[var(--text-main)] leading-7 sm:text-3xl">
+        <p className="font-serif text-3xl md:text-4xl text-[var(--text-main)] leading-7 sm:text-3xl">
           Hey, I'm Maisoon Rahman
         </p>
 
         <p className="text-sm leading-7 text-[var(--text-muted)] sm:text-[15px]">
-          I'm a developer and designer interested in building playful, thoughtful,
-          and accessible digital experiences. I like creative front-end work,
-          interactive storytelling, and projects that feel polished, personal,
-          and a little fun. </p>
+          I like building things that feel thoughtful, a little playful, and actually enjoyable to use.
+          </p>
 
-          <p className="text-sm leading-7 text-[var(--text-muted)] sm:text-[15px]" >Currently looking for Summer 2026 opportunities while I prepare to begin my 
-          Masters in Computer Science at Stony Brook University (Fall 2026)
+        <p className="text-sm leading-7 text-[var(--text-muted)] sm:text-[15px]">
+          I work across frontend and design, using React, TypeScript, and Figma to create interfaces that are both functional and intentional. My background in CS and art pushes me to think about both how things work and how they feel.
+           </p>
+          
+
+          <p className="text-sm leading-7 text-[var(--text-muted)] sm:text-[15px]" >
+            I’m currently looking for Summer 2026 roles in frontend, UX engineering, or product-focused teams 
+            before starting my M.S. at Stony Brook.
         </p>
 
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm text-[var(--text-muted)]">
-          <a
-            href="https://github.com/maisoonrahman"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 transition hover:text-[var(--text-main)]"
-          >
-            <Github className="h-4 w-4" />
-            GitHub
-          </a>
+        <div className="flex flex-wrap items-center gap-3 pt-2">
 
-          <a
-            href="https://www.linkedin.com/in/maisoon-rahman/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 transition hover:text-[var(--text-main)]"
-          >
-            <Linkedin className="h-4 w-4" />
-            LinkedIn
-          </a>
+        <a
+          href="https://github.com/maisoonrahman"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--border-soft)] bg-[var(--bg-card)] px-4 py-2 text-sm transition hover:border-[var(--text-main)] hover:text-[var(--text-main)]"
+        >
+          <Github className="h-4 w-4" />
+          GitHub
+        </a>
 
-          <a
-            href={resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 transition hover:text-[var(--text-main)]"
-          >
-            <FileText className="h-4 w-4" />
-            Resume
-          </a>
+        <a
+          href="https://www.linkedin.com/in/maisoon-rahman/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--border-soft)] bg-[var(--bg-card)] px-4 py-2 text-sm transition hover:border-[var(--text-main)] hover:text-[var(--text-main)]"
+        >
+          <Linkedin className="h-4 w-4" />
+          LinkedIn
+        </a>
 
-          <a
-            href="mailto:maisoon.a.rahman@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 transition hover:text-[var(--text-main)]"
-          >
-            <Mail className="h-4 w-4" />
-            Email
-          </a>
-        </div>
+        <a
+          href={resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--border-soft)] bg-[var(--bg-card)] px-4 py-2 text-sm transition hover:border-[var(--text-main)] hover:text-[var(--text-main)]"
+        >
+          <FileText className="h-4 w-4" />
+          Resume
+        </a>
+
+        <a
+          href="mailto:maisoon.a.rahman@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--border-soft)] bg-[var(--bg-card)] px-4 py-2 text-sm transition hover:border-[var(--text-main)] hover:text-[var(--text-main)]"
+        >
+          <Mail className="h-4 w-4" />
+          Email
+        </a>
+
+      </div>
       </div>
     </section>
   )

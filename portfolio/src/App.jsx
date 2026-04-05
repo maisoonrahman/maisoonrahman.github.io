@@ -9,13 +9,16 @@ import AboutPage from "./pages/AboutPage"
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "latte"
-  })
+  const saved = localStorage.getItem("theme")
+  return saved === "mocha" ? "mocha" : "latte"
+})
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme)
-    localStorage.setItem("theme", theme)
-  }, [theme])
+const [language, setLanguage] = useState("EN")
+
+useEffect(() => {
+  document.documentElement.setAttribute("data-theme", theme)
+  localStorage.setItem("theme", theme)
+}, [theme])
 
   return (
     <BrowserRouter>
@@ -27,8 +30,12 @@ export default function App() {
               <Layout
                 showHero={true}
                 containerClassName="flex-1 w-full py-0"
+                theme={theme}
+                setTheme={setTheme}
+                language={language}
+                setLanguage={setLanguage}
               >
-                <HomePage theme={theme} setTheme={setTheme} />
+                <HomePage/>
               </Layout>
             }
           />
@@ -36,8 +43,13 @@ export default function App() {
           <Route
             path="/projects"
             element={
-              <Layout>
-                <ProjectsPage theme={theme} setTheme={setTheme} />
+              <Layout
+                theme={theme}
+                setTheme={setTheme}
+                language={language}
+                setLanguage={setLanguage}
+                >
+                <ProjectsPage/>
               </Layout>
             }
           />
@@ -45,8 +57,14 @@ export default function App() {
           <Route
           path="/projects/:slug"
           element={
-            <Layout containerClassName="flex-1 w-full px-0 py-20">
-              <ProjectDetailPage theme={theme} setTheme={setTheme} />
+            <Layout 
+                containerClassName="flex-1 w-full px-0 py-20"
+                theme={theme}
+                setTheme={setTheme}
+                language={language}
+                setLanguage={setLanguage}
+                >
+              <ProjectDetailPage/>
             </Layout>
           }
         />
@@ -54,8 +72,13 @@ export default function App() {
         <Route
             path="/about"
             element={
-              <Layout>
-                <AboutPage theme={theme} setTheme={setTheme} />
+              <Layout
+                theme={theme}
+                setTheme={setTheme}
+                language={language}
+                setLanguage={setLanguage}
+                >
+                <AboutPage/>
               </Layout>
             }
           />

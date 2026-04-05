@@ -5,7 +5,10 @@ import finalprojImg from "../assets/projects-images/biological.png"
 import hackcwruImg from "../assets/projects-images/hackcwru.png"
 import melodyImg from "../assets/projects-images/melody.png"
 import luxImg from "../assets/projects-images/lux.png"
-
+import webtoonScroll from "../assets/webtoon-images/webtoon-problem.mp4"
+import webtoonLofi from "../assets/webtoon-images/lowfi-mockup.png"
+import webtoonHifi from "../assets/webtoon-images/hifi-mockup.png"
+import webtoonDiscover from "../assets/webtoon-images/webtoon-discover.png"
 
 export const projectsData = [
   // =========================
@@ -189,66 +192,189 @@ export const projectsData = [
   },
 
   {
-    slug: "webtoon-redesign",
-    featured: true,
-    categories: ["design"],
-    tags: ["UX Case Study", "UI/UX", "Figma", "User Research"],
-    title: "Webtoon Homepage Redesign",
-    cardDescription:
-      "A user-centered redesign improving navigation and reducing clutter.",
-    thumbnail: webtoonImg,
+  slug: "webtoon-redesign",
+  featured: true,
+  categories: ["design"],
+  tags: ["UX Case Study", "UI/UX", "Figma", "User Research"],
+  title: "Webtoon Homepage Redesign",
+  cardDescription:
+    "A user-centered redesign improving navigation, reducing clutter, and clarifying content discovery.",
+  thumbnail: webtoonImg,
 
-    page: {
-      overview:
-        "A UX case study rethinking the Webtoon homepage to improve hierarchy, reduce overwhelm, and better balance user needs with platform priorities.",
-      meta: {
-        timeline: "Winter 2026",
-        role: ["UX Designer", "UI Designer"],
-        collaborators: ["Solo project"],
-        tools: ["Figma", "User Research"],
-      },
-      sections: [
-        {
-          id: "problem",
-          type: "text",
-          title: "Problem",
-          content:
-            "The existing homepage felt cluttered and visually overwhelming, especially for returning users trying to quickly find what they were already reading. The information hierarchy made discovery and continuity compete with each other instead of working together.",
-        },
-        {
-          id: "approach",
-          type: "text",
-          title: "Approach",
-          content:
-            "I approached the redesign from the perspective of an actual Webtoon user. Instead of throwing out the platform structure entirely, I aimed to keep recognizable business priorities in place while improving usability and clarity.",
-        },
-        {
-          id: "before-vs-after",
-          type: "before-after",
-          title: "Before vs After",
-          before: [
-            "Cluttered layout",
-            "Weak hierarchy between sections",
-            "Too much scrolling to reach current reads",
-            "Discoverability and continuity felt disconnected",
-          ],
-          after: [
-            "Clearer content grouping",
-            "Stronger visual hierarchy",
-            "Current reads surfaced earlier",
-            "Discovery sections reorganized to reduce overwhelm",
-          ],
-        },
-        {
-          id: "takeaways",
-          type: "text",
-          title: "Takeaways",
-          content:
-            "This project reinforced how redesign work is rarely about making everything look different. The stronger solution was to preserve the platform’s existing logic where it still served business needs while removing friction for users.",
-        },
-      ],
+  page: {
+    overview:
+      "A targeted redesign of the Webtoon home page focused on improving usability without disrupting the platform’s existing structure.",
+
+    meta: {
+      timeline: "Winter 2026",
+      role: ["UX Designer", "UI Designer"],
+      collaborators: ["Solo project"],
+      tools: ["Figma", "User Research"],
     },
+
+    sections: [
+      {
+        id: "overview",
+        type: "text",
+        title: "Overview",
+        content:
+          "This project focuses on a targeted redesign of the Webtoon home page to improve usability without disrupting the platform’s existing structure. Instead of a full overhaul, this redesign works within real product constraints while preserving business priorities such as promotions, featured content, and partnerships. At the same time, it addresses key user pain points around navigation, overwhelm, and content discovery.",
+      },
+
+      {
+        id: "hero-mockup",
+        type: "image",
+        title: "Final Mockup",
+        image: webtoonHifi,
+        alt: "Final redesigned Webtoon homepage mockup",
+        caption:
+          "Final homepage concept showing a clearer hierarchy, a more prominent Current Reads section, and a consolidated Discover More area.",
+      },
+
+      {
+        id: "demo-video",
+        type: "video",
+        title: "Interaction Demo",
+        video: webtoonScroll,
+        autoplay: true,
+        muted: true,
+        loop: true,
+        caption: "Demonstrating the Current Reads carousel and Discover More interaction."
+      },
+
+      {
+        id: "problem",
+        type: "list",
+        title: "The Problem",
+        items: [
+          "Endlessly long scroll causes decision paralysis",
+          "Returning users struggle to quickly find Current Reads",
+          "New users face decision fatigue due to too many content sections",
+          "Endless scrolling creates cognitive overload and reduces engagement",
+          "The platform surfaces a large amount of content, but it does not feel manageable or intentional",
+        ],
+      },
+
+      {
+        id: "constraints",
+        type: "list",
+        title: "Constraints",
+        items: [
+          "Keep featured and promotional content highly visible",
+          "Support short-form and animated content along with major IPs such as Disney and Marvel",
+          "Maintain existing discovery categories",
+          "Align with common industry patterns",
+        ],
+      },
+
+      {
+        id: "design-approach",
+        type: "text",
+        title: "Design Approach",
+        content:
+          "The guiding principle was simple: improve clarity and usability without disrupting business goals. Instead of adding new features, the focus was on restructuring hierarchy, reducing noise, and making interactions more intentional.",
+      },
+
+      {
+        id: "featured-section",
+        type: "text",
+        title: "1. Featured Section",
+        content:
+          "The featured section remains at the top to support promotions, partnerships, and new releases. This respects existing business priorities while acting as the entry point for new users.",
+      },
+
+      {
+        id: "current-reads",
+        type: "text",
+        title: "2. Current Reads",
+        content:
+          "I moved Current Reads directly below Featured to better match user expectations around continue-watching style patterns. The section uses a large centered carousel with side cards partially visible for depth and smoother horizontal interaction. Logged-out users see a locked state with a login prompt, while logged-in users can immediately continue reading.",
+      },
+
+      {
+        id: "wireframes",
+        type: "image-grid",
+        title: "Early Exploration (Lo-fi)",
+        images: [
+          {
+            src: webtoonLofi,
+            caption: "Initial attempt at restructuring hierarchy",
+          },
+          {
+            src: webtoonLofi,
+            caption: "Exploring placement of Current Reads higher on the page",
+          },
+        ],
+      },
+
+      {
+        id: "discover-more",
+        type: "text",
+        title: "3. Discover More",
+        content:
+          "Multiple stacked sections created an overwhelming and repetitive experience, so I consolidated discovery into a single Discover More section. It uses horizontal pill tabs with one content view at a time. Tabs include For You, Trending, Popular, New Releases, and Completed. This reduces endless scrolling, encourages intentional exploration, and makes discovery feel controlled instead of chaotic.",
+      },
+
+      {
+        id: "discover-image",
+        type: "image",
+        title: "Discover More Interaction",
+        image: webtoonDiscover,
+        alt: "Discover More section with tabbed navigation",
+        caption:
+          "Tabbed discovery reduces visual overload by showing one category at a time instead of stacking multiple full sections.",
+      },
+
+      {
+        id: "key-decisions",
+        type: "list",
+        title: "Key Design Decisions",
+        items: [
+          "Reduce decision fatigue by replacing multiple sections with a single entry point",
+          "Show fewer choices at once",
+          "Allow users to choose how they want to explore",
+          "Prioritize returning users without ignoring new users",
+          "Keep featured content dominant to maintain business visibility",
+          "Use login prompts to support user growth",
+        ],
+      },
+
+      {
+        id: "what-sets-this-apart",
+        type: "list",
+        title: "What Sets This Apart",
+        items: [
+          "Not a full redesign",
+          "Works within product and business constraints",
+          "Improves systems instead of replacing them",
+          "Focuses on content hierarchy, user behavior, and platform goals",
+          "Addresses real user friction such as scroll fatigue, decision paralysis, and difficulty resuming content",
+        ],
+      },
+
+      {
+        id: "outcome",
+        type: "list",
+        title: "Outcome",
+        items: [
+          "Faster access to ongoing reads",
+          "Reduced cognitive load",
+          "More intentional content discovery",
+          "Increased likelihood of login or signup",
+          "Maintained visibility for promotions and partnerships",
+        ],
+      },
+
+      {
+        id: "reflection",
+        type: "text",
+        title: "Reflection",
+        content:
+          "This project highlights a core principle: strong UX is not about removing complexity. It is about organizing it. By restructuring instead of fully redesigning, this solution improves usability while staying aligned with how the platform actually operates.",
+      },
+    ],
   },
+},
 
   // =========================
   // CODING PROJECTS
