@@ -63,7 +63,7 @@ export default function ProjectsPreview() {
   return (
     <section id="projects" className="px-6 py-8">
       <div className="mx-auto max-w-7xl">
-        <p className="text-lg font-semibold tracking-tight text-[var(--text-main)] leading-7 sm:text-3xl">
+        <p className="font-serif text-3xl md:text-4xl text-[var(--text-main)] leading-7 sm:text-3xl">
           Featured Projects
         </p>
 

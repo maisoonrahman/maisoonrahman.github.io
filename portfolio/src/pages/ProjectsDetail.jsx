@@ -44,7 +44,7 @@ function SectionRenderer({ section }) {
   if (section.type === "list") {
     return (
       <section id={sectionId} className="project-section">
-        <h2 className="project-section-title">{section.title}</h2>
+        <h2 className="project-section-title font-serif text-xl md:text-2xl text-[var(--text-main)] leading-6">{section.title}</h2>
         <ul className="project-list">
           {section.items?.map((item) => (
             <li key={item}>{item}</li>
@@ -54,10 +54,46 @@ function SectionRenderer({ section }) {
     )
   }
 
+  if (section.type === "video") {
+  return (
+    <section id={sectionId} className="project-section font-serif text-xl md:text-2xl text-[var(--text-main)] leading-6">
+      {section.title && (
+        <h2 className="project-section-title">{section.title}</h2>
+      )}
+
+      <div className="project-video-wrap">
+        {section.embed ? (
+          <iframe
+            src={section.embed}
+            title={section.title || "Project video"}
+            className="project-video"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <video
+            src={section.video}
+            controls
+            autoPlay={section.autoplay || false}
+            muted={section.muted ?? true}
+            loop={section.loop || false}
+            playsInline
+            className="project-video"
+          />
+        )}
+      </div>
+
+      {section.caption && (
+        <p className="project-image-caption">{section.caption}</p>
+      )}
+    </section>
+  )
+}
+
   if (section.type === "before-after") {
     return (
       <section id={sectionId} className="project-section">
-        <h2 className="project-section-title">{section.title}</h2>
+        <h2 className="project-section-title font-serif text-xl md:text-2xl text-[var(--text-main)] leading-6">{section.title}</h2>
 
         <div className="project-compare-grid">
           <div className="project-subcard">
@@ -70,7 +106,7 @@ function SectionRenderer({ section }) {
           </div>
 
           <div className="project-subcard">
-            <h3 className="project-subcard-title">After</h3>
+            <h3 className="project-subcard-title font-serif text-xl md:text-2xl text-[var(--text-main)] leading-6">After</h3>
             <ul className="project-list">
               {section.after?.map((item) => (
                 <li key={item}>{item}</li>
@@ -82,9 +118,62 @@ function SectionRenderer({ section }) {
     )
   }
 
+  if (section.type === "image") {
   return (
     <section id={sectionId} className="project-section">
-      <h2 className="project-section-title">{section.title}</h2>
+      {section.title && <h2 className="project-section-title font-serif text-xl md:text-2xl text-[var(--text-main)] leading-6">{section.title}</h2>}
+
+      <div
+        className={`project-inline-image-wrap ${
+          section.size === "small"
+            ? "project-inline-image-wrap--small"
+            : section.size === "medium"
+            ? "project-inline-image-wrap--medium"
+            : ""
+        }`}
+      >
+        <img
+          src={section.image}
+          alt={section.alt || section.title || "Project image"}
+          className="project-inline-image"
+        />
+      </div>
+
+      {section.caption && (
+        <p className="project-image-caption">{section.caption}</p>
+      )}
+    </section>
+  )
+}
+
+  if (section.type === "image-grid") {
+    return (
+      <section id={sectionId} className="project-section">
+        {section.title && <h2 className="project-section-title font-serif text-xl md:text-2xl text-[var(--text-main)] leading-6">{section.title}</h2>}
+
+        <div className="project-image-grid">
+          {section.images?.map((img) => (
+            <figure key={img.alt || img.src} className="project-image-grid-item">
+              <img
+                src={img.src}
+                alt={img.alt || "Project image"}
+                className="project-inline-image"
+              />
+              {img.caption && (
+                <figcaption className="project-image-caption">
+                  {img.caption}
+                </figcaption>
+              )}
+            </figure>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  return (
+    <section id={sectionId} className="project-section">
+      <h2 className="project-section-title font-serif text-xl md:text-2xl text-[var(--text-main)] leading-6">{section.title}</h2>
       <p className="project-section-text">{section.content}</p>
     </section>
   )
@@ -102,10 +191,16 @@ export default function ProjectDetailPage() {
   const meta = page.meta || {}
   const sections = page.sections || []
 
+  const navSections = sections.filter((section) =>
+        ["overview", "problem", "design-approach", "reflection"].includes(
+          getSectionId(section)
+        )
+      )
+
   return (
     <main className="w-full px-6 py-8">
      <div className="w-full md:grid md:grid-cols-[220px_minmax(0,7fr)] md:gap-6 md:items-start">
-        <ProjectNav sections={sections} />
+        <ProjectNav sections={navSections} />
 
         <article className="project-card" id="project-top">
           <div className="project-image-wrap">
@@ -117,7 +212,7 @@ export default function ProjectDetailPage() {
           </div>
 
           <header className="project-header">
-            <h1 className="project-title">{project.title}</h1>
+            <h1 className="project-title font-serif text-3xl md:text-4xl sm:text-3xl text-[var(--text-main)] leading-7">{project.title}</h1>
             <p className="project-description">
               {page.overview || project.cardDescription}
             </p>
