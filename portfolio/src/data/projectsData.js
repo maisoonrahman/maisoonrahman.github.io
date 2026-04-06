@@ -20,7 +20,6 @@ export const projectsData = [
 
   {
     slug: "personal-portfolio",
-    featured: true,
     categories: ["coding", "design"],
     tags: ["React", "UI/UX", "Frontend", "Animation", "Tailwind"],
     title: "Personal Portfolio",
@@ -427,6 +426,7 @@ export const projectsData = [
 
   {
     slug: "biological-clock",
+    featured: true,
     categories: ["coding"],
     tags: ["Python", "Data Science", "Kalman Filter"],
     title: "Biological Clock Ensemble",
@@ -479,6 +479,7 @@ export const projectsData = [
 
   {
     slug: "lux-yearbook-branding",
+    featured: true,
     categories: ["pr", "design"],
     tags: ["Branding", "PR", "Layout Design", "Canva"],
     title: "LUX Yearbook Branding & PR",
