@@ -146,6 +146,29 @@ function SectionRenderer({ section }) {
   )
 }
 
+if (section.type === "image-group") {
+  return (
+    <div key={section.id} className="space-y-8">
+      <h3 className="font-serif text-2xl text-[var(--text-main)]">
+        {section.title}
+      </h3>
+
+      {section.images.map((img, i) => (
+        <figure key={i} className="space-y-3">
+          <img
+            src={img.image}
+            alt={img.alt}
+            className="w-full rounded-2xl"
+          />
+          <figcaption className="text-sm text-[var(--text-muted)] italic">
+            {img.caption}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  )
+}
+
   if (section.type === "image-grid") {
     return (
       <section id={sectionId} className="project-section">
@@ -172,11 +195,25 @@ function SectionRenderer({ section }) {
   }
 
   return (
-    <section id={sectionId} className="project-section">
-      <h2 className="project-section-title font-serif text-xl md:text-2xl text-[var(--text-main)] leading-6">{section.title}</h2>
-      <p className="project-section-text">{section.content}</p>
-    </section>
-  )
+  <section id={sectionId} className="project-section">
+    <h2 className="project-section-title font-serif text-xl md:text-2xl text-[var(--text-main)] leading-6">
+      {section.title}
+    </h2>
+
+    <p className="project-section-text">{section.content}</p>
+
+    {section.link && (
+      <a
+        href={section.link.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block mt-3 text-sm text-[var(--text-muted)] underline underline-offset-4 hover:text-[var(--text-main)] transition"
+      >
+        {section.link.label} →
+      </a>
+    )}
+  </section>
+)
 }
 
 export default function ProjectDetailPage() {

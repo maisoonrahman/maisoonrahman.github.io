@@ -102,6 +102,9 @@
   --footer-text: #4d4f69;
   --footer-border: rgb(205, 208, 218);
 
+  /* divider */
+  --divider: rgba(0, 0, 0, 0.2);
+
 }
 
 
@@ -209,4 +212,7 @@ html[data-theme="mocha"] {
   --footer-bg: rgb(36, 37, 56);
   --footer-text: #bcc2df;
   --footer-border: rgb(53, 55, 75);
+
+  /* divider */
+  --divider: rgba(255, 255, 255, 0.25); 
 }

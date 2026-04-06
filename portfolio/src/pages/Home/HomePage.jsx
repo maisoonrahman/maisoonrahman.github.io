@@ -8,8 +8,14 @@ export default function HomePage({ theme, setTheme }) {
     <>
       <section className="mx-auto w-full max-w-6xl px-6 py-8">
         <BioSection />
+
+        <div className="h-[1.5px] w-full bg-gradient-to-r from-transparent via-[var(--divider)] to-transparent my-16" />
+
         <Projects />
-        <ExtrasSection theme={theme} setTheme={setTheme} />
+
+        <div className="h-[1.5px] w-full bg-gradient-to-r from-transparent via-[var(--divider)] to-transparent my-16" />
+
+        <ExtrasSection />
       </section>
     </>
   )

@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import ProjectsCard from "../../components/UI/ProjectsCard"
 import { projectsData } from "../../data/projectsData"
 import "../../styles/projects.css"
+import { Link } from "react-router-dom"
 
 export default function ProjectsPreview() {
   const featuredProjects = projectsData.filter((project) => project.featured)
@@ -61,14 +62,22 @@ export default function ProjectsPreview() {
   }
 
   return (
-    <section id="projects" className="px-6 py-8">
-      <div className="mx-auto max-w-7xl">
+    <section id="projects" className="px-6 py-3">
+      <div className="mx-auto space-y-4 max-w-7xl">
         <p className="font-serif text-3xl md:text-4xl text-[var(--text-main)] leading-7 sm:text-3xl">
           Featured Projects
         </p>
 
+        <p className="text-sm leading-7 text-[var(--text-muted)] sm:text-[15px]">
+          Here are some of my featured projects I'm really proud of!    </p>
+        <p>   <Link to="/projects">
+                To see more, click here →
+              </Link> </p>
+          
+
+
         <div className="relative mx-auto flex w-full max-w-6xl items-center justify-center">
-          <div className="relative h-[560px] w-full overflow-hidden sm:h-[600px]">
+          <div className="relative h-[560px] w-full overflow-hidden sm:h-[500px]">
             <button
               type="button"
               onClick={prevProject}

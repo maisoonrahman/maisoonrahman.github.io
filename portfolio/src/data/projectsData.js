@@ -9,6 +9,9 @@ import webtoonScroll from "../assets/webtoon-images/webtoon-problem.mp4"
 import webtoonLofi from "../assets/webtoon-images/lowfi-mockup.png"
 import webtoonHifi from "../assets/webtoon-images/hifi-mockup.png"
 import webtoonDiscover from "../assets/webtoon-images/webtoon-discover.png"
+import luxTemplate from "../assets/lux-images/template-img.png"
+import luxFlyers from "../assets/lux-images/flyers-img.png"
+import kalmanPaper from "../assets/documents/kalman-paper.pdf"
 
 export const projectsData = [
   // =========================
@@ -247,11 +250,11 @@ export const projectsData = [
         type: "list",
         title: "The Problem",
         items: [
-          "Endlessly long scroll causes decision paralysis",
-          "Returning users struggle to quickly find Current Reads",
-          "New users face decision fatigue due to too many content sections",
-          "Endless scrolling creates cognitive overload and reduces engagement",
-          "The platform surfaces a large amount of content, but it does not feel manageable or intentional",
+          "- Endlessly long scroll causes decision paralysis",
+          "- Returning users struggle to quickly find Current Reads",
+          "- New users face decision fatigue due to too many content sections",
+          "- Endless scrolling creates cognitive overload and reduces engagement",
+          "- The platform surfaces a large amount of content, but it does not feel manageable or intentional",
         ],
       },
 
@@ -260,10 +263,10 @@ export const projectsData = [
         type: "list",
         title: "Constraints",
         items: [
-          "Keep featured and promotional content highly visible",
-          "Support short-form and animated content along with major IPs such as Disney and Marvel",
-          "Maintain existing discovery categories",
-          "Align with common industry patterns",
+          "- Keep featured and promotional content highly visible",
+          "- Support short-form and animated content along with major IPs such as Disney and Marvel",
+          "- Maintain existing discovery categories",
+          "- Align with common industry patterns",
         ],
       },
 
@@ -293,18 +296,11 @@ export const projectsData = [
 
       {
         id: "wireframes",
-        type: "image-grid",
+        type: "image",
         title: "Early Exploration (Lo-fi)",
-        images: [
-          {
-            src: webtoonLofi,
-            caption: "Initial attempt at restructuring hierarchy",
-          },
-          {
-            src: webtoonLofi,
-            caption: "Exploring placement of Current Reads higher on the page",
-          },
-        ],
+        image: webtoonLofi,
+        caption: "Initial attempt at restructuring hierarchy",
+  
       },
 
       {
@@ -330,12 +326,12 @@ export const projectsData = [
         type: "list",
         title: "Key Design Decisions",
         items: [
-          "Reduce decision fatigue by replacing multiple sections with a single entry point",
-          "Show fewer choices at once",
-          "Allow users to choose how they want to explore",
-          "Prioritize returning users without ignoring new users",
-          "Keep featured content dominant to maintain business visibility",
-          "Use login prompts to support user growth",
+          "- Reduce decision fatigue by replacing multiple sections with a single entry point",
+          "- Show fewer choices at once",
+          "- Allow users to choose how they want to explore",
+          "- Prioritize returning users without ignoring new users",
+          "- Keep featured content dominant to maintain business visibility",
+          "- Use login prompts to support user growth",
         ],
       },
 
@@ -344,11 +340,11 @@ export const projectsData = [
         type: "list",
         title: "What Sets This Apart",
         items: [
-          "Not a full redesign",
-          "Works within product and business constraints",
-          "Improves systems instead of replacing them",
-          "Focuses on content hierarchy, user behavior, and platform goals",
-          "Addresses real user friction such as scroll fatigue, decision paralysis, and difficulty resuming content",
+          "- Not a full redesign",
+          "- Works within product and business constraints",
+          "- Improves systems instead of replacing them",
+          "- Focuses on content hierarchy, user behavior, and platform goals",
+          "- Addresses real user friction such as scroll fatigue, decision paralysis, and difficulty resuming content",
         ],
       },
 
@@ -357,11 +353,11 @@ export const projectsData = [
         type: "list",
         title: "Outcome",
         items: [
-          "Faster access to ongoing reads",
-          "Reduced cognitive load",
-          "More intentional content discovery",
-          "Increased likelihood of login or signup",
-          "Maintained visibility for promotions and partnerships",
+          "- Faster access to ongoing reads",
+          "- Reduced cognitive load",
+          "- More intentional content discovery",
+          "- Increased likelihood of login or signup",
+          "- Maintained visibility for promotions and partnerships",
         ],
       },
 
@@ -443,7 +439,7 @@ export const projectsData = [
       meta: {
         timeline: "Fall 2024",
         role: ["Developer"],
-        collaborators: ["Asya Akkus, Noah Henriques, Ashley Sah, Ritika Devarakonda, Siddharth"],
+        collaborators: ["Asya Akkus, Noah Henriques, Ashley Sah, Ritika Devarakonda, Siddharth Khadkikar"],
         tools: ["Python", "Data Science", "Kalman Filter"],
       },
       sections: [
@@ -453,6 +449,10 @@ export const projectsData = [
           title: "Project Context",
           content:
             "This project focused on modeling biological rhythms using computational methods. The work required balancing theory, implementation, and interpretation of results.",
+          link: {
+            url: kalmanPaper,
+            label: "Read full paper here!"
+          }
         },
         {
           id: "implementation",
@@ -487,7 +487,7 @@ export const projectsData = [
 
     page: {
       overview:
-        "A branding and communications project focused on building a more cohesive visual identity across yearbook promotions and outreach.",
+        "A branding and communications role focused on building a more cohesive visual identity across CWRU's yearbook promotions and outreach.",
       meta: {
         timeline: "August 2024 – May 2025",
         role: ["Director of PR", "Designer"],
@@ -500,7 +500,7 @@ export const projectsData = [
           type: "text",
           title: "Role",
           content:
-            "In this role, I helped shape the public-facing identity of the organization through promotional materials, outreach, and consistent visual communication.",
+            "In this role, I helped shape the public-facing identity of LUX CWRU’s Yearbook through promotional materials, outreach, and consistent visual communication.",
         },
         {
           id: "impact",
@@ -514,12 +514,31 @@ export const projectsData = [
           type: "list",
           title: "Key Work",
           items: [
-            "Designed promotional materials",
-            "Maintained consistent visual branding",
-            "Supported club communications and outreach",
-            "Helped present the organization more cohesively to students",
+            "- Designed promotional materials",
+            "- Maintained consistent visual branding",
+            "- Supported club communications and outreach",
+            "- Helped present the organization more cohesively to students",
           ],
         },
+        {
+  id: "final-prod-images",
+  type: "image-group",
+  title: "Some examples of the work I have done",
+  images: [
+    {
+      image: luxTemplate,
+      alt: "Yearbook spreads",
+      caption:
+        "Some spreads I've done for LUX CWRU's Yearbook 2024-2025 volume. The templates were done on the Jostens website."
+    },
+    {
+      image: luxFlyers,
+      alt: "Flyers",
+      caption:
+        "Some flyers I've designed for LUX's 2024-2025 yearbook campaign. The flyers were designed on LUX's Canva Pro account."
+    }
+  ]
+}
       ],
     },
   },
