@@ -133,6 +133,7 @@ export const projectsData = [
   // DESIGN PROJECTS
   // =========================
 
+  /*
   {
     slug: "pawmodoro-timer",
     categories: ["design"],
@@ -192,7 +193,7 @@ export const projectsData = [
         },
       ],
     },
-  },
+  }, */
 
   {
   slug: "webtoon-redesign",
