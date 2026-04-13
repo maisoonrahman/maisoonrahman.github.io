@@ -8,6 +8,7 @@ import luxImg from "../assets/projects-images/lux.png"
 import webtoonScroll from "../assets/webtoon-images/webtoon-problem.mp4"
 import webtoonLofi from "../assets/webtoon-images/lowfi-mockup.png"
 import webtoonHifi from "../assets/webtoon-images/hifi-mockup.png"
+import webtoonTabs from "../assets/webtoon-images/webtoon-tabbing-feature.png"
 import webtoonDiscover from "../assets/webtoon-images/webtoon-discover.png"
 import luxTemplate from "../assets/lux-images/template-img.png"
 import luxFlyers from "../assets/lux-images/flyers-img.png"
@@ -201,18 +202,18 @@ export const projectsData = [
   tags: ["UX Case Study", "UI/UX", "Figma", "User Research"],
   title: "Webtoon Homepage Redesign",
   cardDescription:
-    "A user-centered redesign improving navigation, reducing clutter, and clarifying content discovery.",
+    "A constraint-driven redesign improving navigation, reducing cognitive load, and making content discovery more intentional.",
   thumbnail: webtoonImg,
 
   page: {
     overview:
-      "A targeted redesign of the Webtoon home page focused on improving usability without disrupting the platform’s existing structure.",
+      "A targeted redesign of the Webtoon home page focused on improving usability within existing product constraints, without disrupting core business priorities.",
 
     meta: {
       timeline: "Winter 2026",
       role: ["UX Designer", "UI Designer"],
       collaborators: ["Solo project"],
-      tools: ["Figma", "User Research"],
+      tools: ["Figma", "Heuristic Evaluation", "Competitive Analysis"],
     },
 
     sections: [
@@ -221,7 +222,7 @@ export const projectsData = [
         type: "text",
         title: "Overview",
         content:
-          "This project focuses on a targeted redesign of the Webtoon home page to improve usability without disrupting the platform’s existing structure. Instead of a full overhaul, this redesign works within real product constraints while preserving business priorities such as promotions, featured content, and partnerships. At the same time, it addresses key user pain points around navigation, overwhelm, and content discovery.",
+          "This project explores how to improve the Webtoon homepage without a full redesign. Instead of rebuilding the experience from scratch, the goal was to work within real product constraints while preserving business priorities such as promotions, featured content, and partnerships. The focus was on restructuring content hierarchy, reducing cognitive overload, and making discovery more intentional.",
       },
 
       {
@@ -231,18 +232,19 @@ export const projectsData = [
         image: webtoonHifi,
         alt: "Final redesigned Webtoon homepage mockup",
         caption:
-          "Final homepage concept showing a clearer hierarchy, a more prominent Current Reads section, and a consolidated Discover More area.",
+          "Final homepage concept with improved hierarchy, a prominent Current Reads section, and a consolidated discovery system.",
       },
 
       {
         id: "demo-video",
         type: "video",
-        title: "Interaction Demo",
+        title: "Current Scroll Length Demo",
         video: webtoonScroll,
         autoplay: true,
         muted: true,
         loop: true,
-        caption: "Demonstrating the Current Reads carousel and Discover More interaction."
+        caption:
+          "Demonstrating the current length and time it takes to scroll through the homepage.",
       },
 
       {
@@ -250,12 +252,20 @@ export const projectsData = [
         type: "list",
         title: "The Problem",
         items: [
-          "- Endlessly long scroll causes decision paralysis",
-          "- Returning users struggle to quickly find Current Reads",
-          "- New users face decision fatigue due to too many content sections",
-          "- Endless scrolling creates cognitive overload and reduces engagement",
-          "- The platform surfaces a large amount of content, but it does not feel manageable or intentional",
+          "- Endless vertical scrolling creates decision fatigue and cognitive overload",
+          "- Returning users struggle to quickly find and resume their current reads",
+          "- New users are overwhelmed by the number of competing content sections",
+          "- Content is abundant but lacks clear hierarchy, making it feel unstructured",
+          "- Discovery feels passive and chaotic rather than intentional",
         ],
+      },
+
+      {
+        id: "research",
+        type: "text",
+        title: "Research & Insights",
+        content:
+          "These problems were identified through heuristic evaluation of the existing homepage, analysis of user complaints about navigation and scroll fatigue, and comparison with content platforms such as Netflix and Spotify. A common pattern emerged: successful platforms prioritize quick resumption of content and reduce visible choices at any given time to minimize cognitive load.",
       },
 
       {
@@ -263,10 +273,11 @@ export const projectsData = [
         type: "list",
         title: "Constraints",
         items: [
-          "- Keep featured and promotional content highly visible",
-          "- Support short-form and animated content along with major IPs such as Disney and Marvel",
-          "- Maintain existing discovery categories",
-          "- Align with common industry patterns",
+          "- Maintain visibility of featured and promotional content",
+          "- Support short-form content and major IP partnerships such as Disney and Marvel",
+          "- Preserve existing discovery categories",
+          "- Align with familiar industry patterns",
+          "- Avoid major structural or backend changes",
         ],
       },
 
@@ -275,7 +286,7 @@ export const projectsData = [
         type: "text",
         title: "Design Approach",
         content:
-          "The guiding principle was simple: improve clarity and usability without disrupting business goals. Instead of adding new features, the focus was on restructuring hierarchy, reducing noise, and making interactions more intentional.",
+          "The guiding principle was to improve clarity without increasing complexity. Instead of adding new features, the focus was on reorganizing existing systems to better match user behavior. Multiple approaches were explored, including reducing sections entirely and introducing pagination. The final solution prioritizes visibility, control, and familiarity while minimizing cognitive load.",
       },
 
       {
@@ -283,7 +294,7 @@ export const projectsData = [
         type: "text",
         title: "1. Featured Section",
         content:
-          "The featured section remains at the top to support promotions, partnerships, and new releases. This respects existing business priorities while acting as the entry point for new users.",
+          "The featured section remains at the top to support promotions, partnerships, and new releases. This preserves business priorities while acting as an entry point for new users. Removing or deprioritizing this section would negatively impact visibility for promoted content.",
       },
 
       {
@@ -291,7 +302,7 @@ export const projectsData = [
         type: "text",
         title: "2. Current Reads",
         content:
-          "I moved Current Reads directly below Featured to better match user expectations around continue-watching style patterns. The section uses a large centered carousel with side cards partially visible for depth and smoother horizontal interaction. Logged-out users see a locked state with a login prompt, while logged-in users can immediately continue reading.",
+          "Current Reads was moved directly below Featured to align with common 'continue watching' patterns seen in content platforms. This prioritizes returning users and reduces friction in resuming content. A centered carousel was introduced to create visual focus and reduce scanning effort. Logged-out users see a locked state with a login prompt, encouraging account creation without disrupting the browsing experience.",
       },
 
       {
@@ -299,8 +310,26 @@ export const projectsData = [
         type: "image",
         title: "Early Exploration (Lo-fi)",
         image: webtoonLofi,
-        caption: "Initial attempt at restructuring hierarchy",
-  
+        caption:
+          "Early exploration focused on restructuring hierarchy and reducing vertical stacking. Initial concepts still relied too heavily on multiple sections, which informed the final consolidation approach.",
+      },
+
+      {
+        id: "tabbed-navigation",
+        type: "text",
+        title: "Restructuring the Homepage with Tabbed Navigation",
+        content:
+          "A key issue across the homepage was the reliance on vertically stacked sections, which forced users into continuous scrolling and increased cognitive load. The problem was not the amount of content, but how it was presented.\n\nTo address this, I introduced tabbed navigation as a structural pattern that could be applied across multiple sections. Instead of showing all categories at once, tabs allow users to switch between them within the same space, reducing the number of visible choices at any given time.\n\nThis approach transforms the experience from passive scrolling to active exploration. It was chosen over alternatives such as pagination or collapsing sections because it preserves visibility of all options while maintaining a clean and controlled interface. It also aligns with familiar patterns from other content platforms, making the interaction intuitive without requiring relearning.",
+      },
+
+      {
+        id: "tabbed-image",
+        type: "image",
+        title: "From Stacked Sections to Controlled Navigation",
+        image: webtoonTabs,
+        alt: "Diagram showing how vertically stacked sections are reorganized into tabbed navigation",
+        caption:
+          "Multiple vertically stacked categories are consolidated into structured, tab-based systems to reduce scroll fatigue and improve clarity.",
       },
 
       {
@@ -308,17 +337,17 @@ export const projectsData = [
         type: "text",
         title: "3. Discover More",
         content:
-          "Multiple stacked sections created an overwhelming and repetitive experience, so I consolidated discovery into a single Discover More section. It uses horizontal pill tabs with one content view at a time. Tabs include For You, Trending, Popular, New Releases, and Completed. This reduces endless scrolling, encourages intentional exploration, and makes discovery feel controlled instead of chaotic.",
-      },
+          "The tabbed navigation system is applied to discovery through a single Discover More section, replacing multiple stacked content blocks. Users can switch between categories such as For You, Trending, Popular, New Releases, and Completed within the same space.\n\nBy showing only one category at a time, the interface reduces visual noise while still preserving all discovery options. This makes exploration feel more intentional and manageable without removing content."
+          },
 
       {
         id: "discover-image",
         type: "image",
-        title: "Discover More Interaction",
+        title: "Discover More Section",
         image: webtoonDiscover,
         alt: "Discover More section with tabbed navigation",
         caption:
-          "Tabbed discovery reduces visual overload by showing one category at a time instead of stacking multiple full sections.",
+          "Tabbed navigation reduces visual clutter by showing one category at a time while preserving access to all discovery options.",
       },
 
       {
@@ -326,12 +355,11 @@ export const projectsData = [
         type: "list",
         title: "Key Design Decisions",
         items: [
-          "- Reduce decision fatigue by replacing multiple sections with a single entry point",
-          "- Show fewer choices at once",
-          "- Allow users to choose how they want to explore",
-          "- Prioritize returning users without ignoring new users",
-          "- Keep featured content dominant to maintain business visibility",
-          "- Use login prompts to support user growth",
+          "- Replace vertical stacking with controlled, tab-based exploration",
+          "- Reduce the number of visible choices at any given time",
+          "- Prioritize returning users without excluding new users",
+          "- Maintain strong visibility for featured and promotional content",
+          "- Introduce interaction patterns familiar from other content platforms",
         ],
       },
 
@@ -340,25 +368,33 @@ export const projectsData = [
         type: "list",
         title: "What Sets This Apart",
         items: [
-          "- Not a full redesign",
-          "- Works within product and business constraints",
-          "- Improves systems instead of replacing them",
-          "- Focuses on content hierarchy, user behavior, and platform goals",
-          "- Addresses real user friction such as scroll fatigue, decision paralysis, and difficulty resuming content",
+          "- Focuses on restructuring rather than redesigning from scratch",
+          "- Balances user needs with real business constraints",
+          "- Improves existing systems instead of replacing them",
+          "- Addresses real user friction such as scroll fatigue and decision paralysis",
+          "- Considers both UX and implementation feasibility",
         ],
       },
 
       {
         id: "outcome",
         type: "list",
-        title: "Outcome",
+        title: "Expected Impact",
         items: [
-          "- Faster access to ongoing reads",
-          "- Reduced cognitive load",
-          "- More intentional content discovery",
-          "- Increased likelihood of login or signup",
+          "- Reduced scroll depth before user interaction",
+          "- Faster access to ongoing reads for returning users",
+          "- Lower cognitive load through controlled content exposure",
+          "- Increased likelihood of login through contextual prompts",
           "- Maintained visibility for promotions and partnerships",
         ],
+      },
+
+      {
+        id: "engineering",
+        type: "text",
+        title: "Implementation Considerations",
+        content:
+          "This redesign works within a component-based system and does not require major backend changes. The tabbed discovery system can reuse existing category data, while the carousel interaction can be implemented with standard frontend patterns. This makes the solution feasible without disrupting the current architecture.",
       },
 
       {
@@ -366,112 +402,11 @@ export const projectsData = [
         type: "text",
         title: "Reflection",
         content:
-          "This project highlights a core principle: strong UX is not about removing complexity. It is about organizing it. By restructuring instead of fully redesigning, this solution improves usability while staying aligned with how the platform actually operates.",
+          "This project reinforced that strong UX is not about removing complexity but organizing it. By working within constraints and focusing on structure, this redesign improves usability while staying aligned with how the platform actually operates.",
       },
     ],
   },
 },
-
-  // =========================
-  // CODING PROJECTS
-  // =========================
-
-  {
-    slug: "melody-mapper",
-    categories: ["coding"],
-    tags: ["Python", "NLP", "Data Visualization", "Spotify API"],
-    title: "Melody Mapper",
-    cardDescription:
-      "An NLP project analyzing song lyrics and visualizing themes.",
-    thumbnail: melodyImg,
-
-    page: {
-      overview:
-        "A data-driven project that analyzes lyrics and translates textual patterns into visual insights.",
-      meta: {
-        timeline: "Fall 2024",
-        role: ["Developer"],
-        collaborators: ["Neha Panduri, Joy Fan, Nikki D'Costa, Shanmuga Ganesh"],
-        tools: ["Python", "NLP", "Spotify API", "Data Visualization"],
-      },
-      sections: [
-        {
-          id: "project-overview",
-          type: "text",
-          title: "Project Overview",
-          content:
-            "Melody Mapper explores how lyrical content can be transformed into structured visual output. The project combines text analysis with visual storytelling to make patterns in music easier to interpret.",
-        },
-        {
-          id: "features",
-          type: "list",
-          title: "Features",
-          items: [
-            "Lyric analysis",
-            "Theme classification",
-            "Visualization outputs",
-            "Integration with music-related data sources",
-          ],
-        },
-        {
-          id: "technical-focus",
-          type: "text",
-          title: "Technical Focus",
-          content:
-            "The main challenge was building a pipeline that balanced analysis and presentation. I wanted the output to be technically meaningful without losing readability for users.",
-        },
-      ],
-    },
-  },
-
-  {
-    slug: "biological-clock",
-    featured: true,
-    categories: ["coding"],
-    tags: ["Python", "Data Science", "Kalman Filter"],
-    title: "Biological Clock Ensemble",
-    cardDescription:
-      "A biometric modeling project using Kalman Filtering.",
-    thumbnail: finalprojImg,
-
-    page: {
-      overview:
-        "A biometric modeling project focused on circadian rhythm prediction using probabilistic filtering techniques.",
-      meta: {
-        timeline: "Fall 2024",
-        role: ["Developer"],
-        collaborators: ["Asya Akkus, Noah Henriques, Ashley Sah, Ritika Devarakonda, Siddharth Khadkikar"],
-        tools: ["Python", "Data Science", "Kalman Filter"],
-      },
-      sections: [
-        {
-          id: "project-context",
-          type: "text",
-          title: "Project Context",
-          content:
-            "This project focused on modeling biological rhythms using computational methods. The work required balancing theory, implementation, and interpretation of results.",
-          link: {
-            url: kalmanPaper,
-            label: "Read full paper here!"
-          }
-        },
-        {
-          id: "implementation",
-          type: "text",
-          title: "Implementation",
-          content:
-            "I built data processing workflows and applied Kalman filtering methods to model circadian rhythm behavior from biometric data.",
-        },
-        {
-          id: "technical-takeaway",
-          type: "text",
-          title: "Technical Takeaway",
-          content:
-            "The project strengthened my experience working on data-heavy technical problems where the biggest challenge is often turning theory into an implementation that is actually usable.",
-        },
-      ],
-    },
-  },
 
   // =========================
   // PR / DESIGN WORK
